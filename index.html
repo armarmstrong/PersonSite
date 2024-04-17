@@ -54,14 +54,14 @@
         top: 0;
         position: absolute;
 
-        padding: 16px 32px 0px 32px;
+        padding: 16px 48px 0px 48px;
     }
 
     #map {
         /* background-color: rgb(197, 197, 197);
         opacity: 0.5; */
         position: absolute;
-        height: 100%;
+        height: calc(100% - 36px);
         width: 100%;
         left: 0;
         top: 0;
@@ -91,28 +91,39 @@
         font-weight: 400;
     }
     
-    .header-title {
+    .header-title, .right {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: left;
-        gap: 1px;
+        align-items: flex-end;
+        gap: 16px;
         user-select: none;
     }
 
-    .header-title .zh {
+    .zh {
         font-family: 'long cang';
     }
 
-    .header-title .zh:hover {
-        margin-left: 10px;
-        cursor: pointer;
+    #header .dropdown {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 6px;
+
+        transition: 0.2s ease-in-out;
     }
 
-    .header-title .eng {
-        border-bottom: #fff 0.5px solid;
+    #header #plus {
+        transition: 0.1s ease-in-out;
+        transform: 'rotate(-90deg)';
     }
 
+    #header .dropdown a {
+        font-weight: 200;  
+    }
+    #header .dropdown a:hover {
+        font-weight: 300;  
+    }
     /* map */
 
     #map > .container {
@@ -273,7 +284,7 @@
 
     .compass {
         position: fixed;
-        bottom: 20px;
+        bottom: 56px;
         left: 20px;
         width: 76px;
         aspect-ratio: 1;
@@ -334,7 +345,7 @@
     #decorations {
         /* background-color: aqua; */
         z-index: 1;
-        opacity: 0.75;
+        opacity: 0.85;
     }
 
     #decorations .icon {
@@ -360,7 +371,52 @@
         align-items: center;
     }
     
+    /* footer */
+    #footer {
+        z-index: 9999;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        
+        padding: 16px 32px 16px 32px;
+    }
 
+    #footer > .container {
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer * {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .footer-title {
+        width: 100%;
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        user-select: none;
+    }
+
+    #footer .left:hover {
+        background: rgb(185, 185, 185, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    #footer .middle:hover {
+        background: rgb(185, 185, 185);
+    }
+    #footer .right:hover {
+        background: rgb(240, 246, 85);
+    }
 </style>
 </head>
 
@@ -368,7 +424,7 @@
     <section id="header">
         <div class="container">
             <div class="header-title left">
-                <a class="eng">About</a>
+                <a class="eng"></a>
                 <a class="zh"></a>
             </div>
             <!-- <div class="header-title middle">
@@ -376,6 +432,35 @@
                 <a class="zh">你好</a>
             </div> -->
             <div class="header-title right">
+                <div class="clickable" id="about" style="display: flex; gap: 3px;">
+                    <a class="eng">About</a>
+                    <div id="plus">+</div>
+                </div>
+                <div class="dropdown" id="about-dropdown" style="display: none;">
+                    <a class="eng">What is THIS ?</a>
+                    <a class="eng">How it works ?</a>
+                    <a class="eng">Why so cool ?</a>
+                    <div>
+                        <img src="./svg/Filter.svg" alt="" style="width: 10px;">
+                        <a class="eng">Filter</a> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+            <div class="footer-title left">
+                <a class="eng">Explore</a>
+                <a class="zh"></a>
+            </div>
+            <div class="footer-title middle">
+                <a class="eng">FullMap</a>
+                <a class="zh"></a>
+            </div>
+            <div class="footer-title right">
                 <a class="eng">Contact</a>
                 <a class="zh"></a>
             </div>
@@ -435,27 +520,27 @@
                 <canvas id="route-canvas"></canvas>
             </div>
             <div class="container" id="decorations">
-                <img  class="icon" src="./icon/UFO Flying.svg" id="ufo"
+                <!-- <img  class="icon" src="./icon/UFO Flying.svg" id="ufo"
                 style="top: 82%; left: 85%;
-                transform: translate(-50%, -50%) rotate(-60deg) scale(1.5);">
-                <img  class="icon" src="./icon/Game Interface Centaur.svg" id="centaur"
-                style="top: 54%; left: 67%;">
-                <img  class="icon" src="./icon/Nuclear Reactor.svg" id="nuclear"
+                transform: translate(-50%, -50%) rotate(-60deg) scale(1.5);"> -->
+                <!-- <img  class="icon" src="./icon/Game Interface Centaur.svg" id="centaur"
+                style="top: 54%; left: 67%;"> -->
+                <!-- <img  class="icon" src="./icon/Nuclear Reactor.svg" id="nuclear"
                 style="top: 88%; left: 34%;
-                transform: scale(0.8);">
-                <img  class="icon" src="./icon/Newtons Apple.svg" id="apple"
-                style="top: 12%; left: 24%;">
-                <img  class="icon" src="./icon/kiwi-bird-svgrepo-com.svg" id="kiwi"
+                transform: scale(0.8);"> -->
+                <!-- <img  class="icon" src="./icon/Newtons Apple.svg" id="apple"
+                style="top: 12%; left: 24%;"> -->
+                <!-- <img  class="icon" src="./icon/kiwi-bird-svgrepo-com.svg" id="kiwi"
                 style="top: 6%; left: 9%;
-                transform: scale(0.85);">
+                transform: scale(0.85);"> -->
                 <img  class="icon" src="./icon/Cave Entrance Icon (1).svg" id="cave"
                 style="top: 41%; left: 7%;
                 transform: scale(2);">
-                <img  class="icon" src="./icon/Taoist icon.svg" id="taoist"
+                <!-- <img  class="icon" src="./icon/Taoist icon.svg" id="taoist"
                 style="top: 34%; left: 66%;
-                transform: scale(0.85);">
+                transform: scale(0.85);"> -->
                 <img  class="icon" src="./icon/Parking Garage Car 14.svg" id="parking"
-                style="top: calc(66% + 80px);left: calc(23% - 50px);
+                style="top: calc(66% + 120px);left: calc(23% - 80px);
                 transform: scale(0.8);">
 
                 <div class="tree-container" id="tree1" style="top: 66%;left: 23%;">
@@ -603,6 +688,31 @@
         });
     </script>
 
+    <script>
+        const about = document.querySelector('#about');
+        const aboutDropdown = document.querySelector('#about-dropdown');
+        const plus = document.querySelector('#plus');
+
+        aboutDropdown.style.display === 'none';
+        plus.textContent = '+';
+
+
+        about.addEventListener('click', function() {
+            if (aboutDropdown.style.display === 'none') {
+                aboutDropdown.style.display = 'flex';
+                plus.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    plus.textContent = '--';
+                }, 100);
+            } else {
+                aboutDropdown.style.display = 'none';
+                plus.style.transform = 'rotate(90deg)';
+                setTimeout(() => {
+                    plus.textContent = '+';
+                }, 100);
+            }
+        });
+    </script>
 </body>
 
 </html>
