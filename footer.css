@@ -1,0 +1,44 @@
+/* footer */
+#footer {
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+    padding: 16px 32px 16px 32px;
+}
+
+#footer > .container {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer * {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#footer .footer-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#footer .left:hover {
+    background: rgba(185, 185, 185, 0.5);
+    backdrop-filter: blur(1px);
+}
+
+#footer .middle:hover {
+    background: rgb(185, 185, 185);
+}
+#footer .right:hover {
+    background: rgb(240, 246, 85);
+}
