@@ -117,17 +117,20 @@
         justify-content: center;
         align-items: flex-end;
         gap: 6px;
-
+        font-weight: 200;  
         transition: 0.2s ease-in-out;
     }
 
     #header .dropdown a {
         font-weight: 200;  
     }
+
     #header .dropdown a:hover {
         font-weight: 300;
         cursor: pointer;  
     }
+
+
     /* map */
 
     #map > .container {
@@ -233,6 +236,7 @@
 
     #overlay iframe {
       position: absolute;
+      display: none;
       top: 0;
       left: 0;
       width: 100%;
@@ -258,7 +262,7 @@
     <section id="header">
         <div class="container">
             <div class="header-title left">
-                <a class="eng"></a>
+                <a class="eng"> 0 -- 10 ------- 50</a>
                 <a class="zh"></a>
             </div>
             <!-- <div class="header-title middle">
@@ -287,15 +291,15 @@
 
     <section id="footer">
         <div class="container">
-            <div class="footer-title left">
+            <div class="footer-title left" id="explore">
                 <a class="eng">Explore</a>
                 <a class="zh"></a>
             </div>
-            <div class="footer-title middle">
+            <div class="footer-title middle" id="fullmap">
                 <a class="eng">FullMap</a>
                 <a class="zh"></a>
             </div>
-            <div class="footer-title right">
+            <div class="footer-title right" id="contact">
                 <a class="eng">Contact</a>
                 <a class="zh"></a>
             </div>
@@ -304,13 +308,14 @@
 
     <section id="map">
         <div class="container">
+            <!-- background pattern -->
             <canvas id="myCanvas"></canvas>
-
+            <!-- contour lines -->
             <img src="./svg/Topo Map Contour Lines.svg" alt="contour"
             style="height: 100vh; width: 100vw; position: absolute; z-index: -1;
             top: 0%; left: 0%; object-fit: cover;
             opacity: 0.2;">
-            
+            <!-- compass -->
             <div class="compass">
                 <div class="base"></div>
                 <div class="needle">
@@ -318,6 +323,7 @@
                     <div id="north"> <p>N</p> </div>
                 </div>
             </div>
+            <!-- cross line -->
             <div id="cross-line">
                 <div id="row-line">
                     <div></div>
@@ -351,37 +357,56 @@
                     </div>
                 </div>
             </div>
+            <!-- location marker -->
             <div class="container" id="location-marker">
                 <canvas id="route-canvas"></canvas>
             </div>
+            <!-- decorations -->
             <div class="container" id="decorations">
-    
+                <!-- icons -->
                 <img  class="icon" src="./icon/Cave Entrance Icon (1).svg" id="cave"
                 style="top: 41%; left: 7%;
                 transform: scale(2);">
-
-                <div id="kiwi-container" 
-                style="position: absolute; top: 8%; left: 12%;
-                background: #881d9b00; transform: translate(-50%, 0%);
-                display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
-                    <img  class="icon" src="./icon/kiwi-bird-svgrepo-com.svg" id="kiwi"
-                    style="position: relative;
-                    transform: scale(0.85);">
-                    <div class="dialogue-container" style="position: relative; top: 10px; left: 10px;">
-                        <div class="dialogue" id="dialogue4">
-                            <p>I'm kiwi bird,<br>ask me anything.</p>
-                        </div>
-                        <div class="dialogue" id="dialogue1">
-                            <p>This is a personal website - as a puzzle game.<br></p>
-                        </div>
-                    </div>
-                </div>
-                
-                
+                <img  class="icon" src="./icon/Newtons Apple.svg" id="apple">
                 <img  class="icon" src="./icon/Parking Garage Car 14.svg" id="parking"
                 style="top: calc(64% + 120px);left: calc(22% - 80px);
                 transform: scale(0.8);">
-            
+                <img  class="icon" src="./icon/UFO Flying.svg" id="ufo">
+                <div id="ufo-shadow"></div>
+                <!-- kiwi -->
+                <div id="kiwi-container" 
+                style="position: absolute; top: 24%; left: 12%;
+                background: #881d9b00; transform: translate(-50%, 0%);
+                display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
+                    <div id="kiwi">
+                        <img id="kiwi-stand" class="icon" src="./icon/kiwi-bird-svgrepo-com.svg">
+                        <img id="kiwi-body" class="icon" src="./icon/kiwi.svg">
+                        <img id="kiwi-legs1" class="icon" src="./icon/Kiwi Bird (1).svg">
+                        <img id="kiwi-legs2" class="icon" src="./icon/Kiwi Bird (2).svg">
+                    </div>
+
+                    <div class="dialogue-container" style="position: relative; top: 10px; left: 10px;">
+                        <div class="dialogue" id="dialogue4" style="width: 115px;">
+                            <p>I'm a kiwi bird,<br>Ask me anything.</p>
+                        </div>
+                        <div class="dialogue" id="dialogue5" style="width: 180px;">
+                            <p>Well... Actually, you can't ask,<br>unless...</p>
+                        </div>
+                        <div class="dialogue" id="dialogue6" style="width: 140px;">
+                            <p>You seem like a noob.<br>Try the <span style="font-weight: 500;">About +</span> on the top right corner.</p>
+                        </div>
+                        <div class="dialogue" id="dialogue1" style="width: 180px;">
+                            <p>This is a personal website - as a puzzle game.<br></p>
+                        </div>
+                        <div class="dialogue" id="dialogue2" style="width: 190px;">
+                            <p>Just click on whatever attracts you to explore. <br> You can also use the filter to find specific projects.<br></p>
+                        </div>
+                        <div class="dialogue" id="dialogue3" style="width: 190px;">
+                            <p>Cause I'm super bored, and I'm born to be alternative.<br></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- trees -->
                 <div class="tree-container" id="tree1" style="top: 64%;left: 22%;">
                 </div>
                 <div class="tree-container" id="tree2" style="top: calc(64% - 60px);left: calc(22% + 110px);">
@@ -395,105 +420,73 @@
     <div id="opacity-area"></div>
     <div id="progress-bar" 
     style="position: fixed; z-index: 9999; bottom: 0; left: 0; 
-    height: 12px; width: 0; background-color: #3ffa64; 
+    height: 12px; width: 0; background-color: hsl(131, 90%, 70%); 
     transition: 0.5s ease-in-out;"></div>
 
     <section id="overlay" style="display: block;">
         <iframe id="overlay-iframe" src="" frameborder="0"></iframe>
     </section>
 
+    <section id="contact-page" style="display: block;">
+        <iframe id="contact-iframe" src="contact.html" frameborder="0"
+        style="width: 0; height: 0; 
+        position: absolute; 
+        display: none;
+        z-index: 6668;
+        top: 50%; left: 50%; 
+        transform: translate(-50%, -50%);"></iframe>
+    </section>
+
     <!-- 引入js -->
     <script src="./map-background.js"></script>
     <script src="./location-marker.js"></script>
+    <script src="./project-overlay.js"></script>
+
     <script src="./random-wearing.js"></script>
     <script src="./compass.js"></script>
-    <script src="./treeflip.js"></script>
+
+    <script src="./tree-flip.js"></script>
     <script src="./kiwi.js"></script>
+    <script src="./ufo-and-footer.js"></script>
+    <script src="./about-dropdown.js"></script>
+   
 
-    <!-- about dropdown -->
+    <!-- apple fall -->
+
     <script>
-        const about = document.querySelector('#about');
-        const aboutDropdown = document.querySelector('#about-dropdown');
-        const plus = document.querySelector('#plus');
+        const apple = document.getElementById('apple');
+        const marker6 = document.getElementById('marker6');
+        let isFirstClick = true;
 
-        const textAbout = document.querySelector('#text-about');
-
-        aboutDropdown.style.display = 'none';
-        plus.textContent = '+';
-
-        
-        about.addEventListener('mouseover', function() {
-            textAbout.style.borderBottom = '1px solid #000000';
-        });
-
-        about.addEventListener('mouseout', function() {
-            textAbout.style.borderBottom = '0';
-        });
-
-        about.addEventListener('click', function() {
-            if (aboutDropdown.style.display === 'none') {
-                aboutDropdown.style.display = 'flex';
-                plus.style.transform = 'rotate(180deg)';
+        function startFallAnimation() {
+            apple.style.top = 0.16 * window.innerHeight + 'px';
+            
+            setTimeout(function() {
+                apple.style.transition = 'top 0.2s';
+                apple.style.top = (0.16 * window.innerHeight + 20) + 'px';
                 
-                    plus.textContent = '--';
-                
+                setTimeout(function() {
+                    apple.style.top = (0.16 * window.innerHeight) + 'px';
+                }, 160);
+            }, 160);
+        }
+
+        marker6.addEventListener('click', function(event) {
+            if (isFirstClick) {
+                startFallAnimation();
+                isFirstClick = false;
             } else {
-                aboutDropdown.style.display = 'none';
-                plus.style.transform = 'rotate(0deg)';
-               
-                    plus.textContent = '+';
-                
+                showOverlay(marker6, './project-pages/Lino.html');
             }
         });
-    </script>
 
-    <script>
-        const opacityArea = document.getElementById('opacity-area');
-        const overlay = document.getElementById('overlay');
-        
-
-        function showOverlay(marker, projectPageLink) {
-            marker.addEventListener('click', function(event) {
-                const iframe = document.getElementById('overlay-iframe');
-                iframe.src = projectPageLink;
-
-                const progressBar = document.getElementById('progress-bar');
-                progressBar.style.display = 'block';
-
-                iframe.addEventListener('load', function() {
-                    // Update the progress bar to 100%
-                    progressBar.style.width = '100%';
-
-                    // Wait for a short delay (e.g., 500 milliseconds) before showing the overlay
-                    setTimeout(function() {
-                        // Show the overlay
-                        overlay.style.top = '48px';
-                        overlay.style.height = 'calc(100% - 48px)';
-                        
-                        opacityArea.style.height = '100%';
-                        opacityArea.style.top = '0';
-                        progressBar.style.width = '0';
-                    }, 500);
-                    });
-                });
-                }
-        
-        opacityArea.addEventListener('click', function(event) {
-            overlay.style.height = '0';
-            overlay.style.top = '100%';
-            opacityArea.style.height = '0';
-            opacityArea.style.top = '100%';
+        apple.addEventListener('click', function(event) {
+            window.open('https://github.com/armarmstrong?tab=repositories', '_blank');
         });
-        
-        showOverlay(marker1, './project-pages/Aurora House.html');
-        showOverlay(marker2, './project-pages/Go Above or Below.html');
-        showOverlay(marker3, 'project-pages/City of Ecstasy.html');
-        showOverlay(marker4, 'project-pages/Parade with Gods.html');
-        showOverlay(marker5, './project-pages/Hill Making.html');
-        showOverlay(marker6, './project-pages/Lino.html');
-        showOverlay(marker7, './project-pages/Play Time.html');
-
     </script>
+
+   
+    
     <!-- cave shake -->
     <script>
         const cave = document.getElementById('cave');

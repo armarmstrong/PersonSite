@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" background-color: #f4f3f0>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- 引入字体图标库 -->
+    
+    <!-- 引入Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./main-style.css">
+    <link rel="stylesheet" href="./compass.css">
+    <link rel="stylesheet" href="./crossline.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./decorations.css">
+
+    <!-- 加入ico -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/favicon-32x32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+    body {
+        background: #000000;
+    }
+
+    #header {
+    /* background-color: #6e6e6e;
+    opacity: 0.5; */
+
+    height: auto;
+    width: 100%;
+    z-index: 999;
+
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    padding: 16px 48px 0px 48px;
+    }
+
+    .container {
+    /* background-color: aqua; */
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    }
+
+    /* header */
+    #header > .container {
+        /* background-color: rgba(0, 255, 255, 0.243); */
+        
+
+        position: absolute;
+        left: 100px;
+        top: 100px;
+
+        height: 80px;
+        width: 80px;
+    }
+
+    #header * {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #ufo-white {
+        width: 50%;
+        aspect-ratio: 1;
+        position: absolute;
+
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    #walking {
+        width: 36%;
+        aspect-ratio: 1;
+        position: absolute;
+
+        top: 68%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-40deg);
+    }
+
+    #ufo-shadow {
+        border-radius: 50%;
+        z-index: -1;
+        
+        position: absolute;
+        top: 86%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+        scaleY(0.44) scaleX(0.8);
+
+        width: 67%;
+        height: 67%;
+        background: rgba(36, 36, 36, 0.85);
+        box-shadow: 0px 0px 12px 12px rgb(36, 36, 36, 0.85);
+    }
+
+    #ufo-light{
+        clip-path: polygon(50% 100%, 20% 60%, 30% 52%, 70% 52%, 80% 60%);
+        
+        z-index: -2;
+        position: absolute;
+        top: 89%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+        scaleY(-1.6) scaleX(1.6);
+
+        width: 67%;
+        height: 67%;
+        background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.814) , rgba(255, 255, 255, 0) 45%);
+    }
+
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <div class="container">
+            <svg id="ufo-white" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 612 612" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M4.283,208.326c-28.015,71.685,84.358,182.589,250.992,247.71c166.634,65.121,324.428,59.801,352.442-11.884 c17.432-44.606-19.496-104.396-90.027-158.893c-0.489,22.675-4.952,44.944-13.309,66.328 c-3.559,9.108-11.697,21.519-30.254,28.923c-10.853,4.33-24.392,6.526-40.242,6.526c-40.758,0-99.372-14.662-156.792-39.22 c-27.484-11.755-52.967-25.125-73.694-38.665c-23.871-15.594-41.229-31.196-51.592-46.373 c-15.399-22.551-13.289-40.954-8.807-52.421c8.368-21.412,20.275-40.884,35.185-57.777 C89.396,144.815,21.715,163.723,4.283,208.326z M546.789,412.194c7.682-5.648,19.708-2.339,26.861,7.39 c7.153,9.729,6.724,22.194-0.958,27.842s-19.709,2.339-26.861-7.39C538.678,430.307,539.107,417.842,546.789,412.194z M248.81,406.547c3.842-9.832,16.98-13.886,29.344-9.054c12.363,4.832,19.271,16.719,15.428,26.552 c-3.842,9.832-16.98,13.887-29.344,9.054C251.875,428.267,244.969,416.379,248.81,406.547z M51.312,246.776 c-11.854,2.301-22.937-3.422-24.754-12.782c-1.817-9.361,6.321-18.813,18.174-21.114c11.854-2.301,22.937,3.422,24.754,12.782 C71.303,235.022,63.167,244.475,51.312,246.776z"></path> <path d="M433.885,363.563c24.904,0,42.999-6.106,48.633-20.52c9.669-24.741,13.162-50.371,11.229-75.19 c-4.919-63.176-45.008-121.096-107.987-145.708c-20.393-7.97-41.378-11.745-62.027-11.744 c-43.118,0.003-84.718,16.481-116.132,45.623c-18.252,16.932-33.069,38.136-42.738,62.878 C143.296,274.09,338.533,363.563,433.885,363.563z"></path> </g> </g> </g></svg>
+            <svg id="walking" t="1713802371151" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5513"><path d="M566.930286 261.071238c45.592381 0 83.456-37.13219 83.456-81.773714C650.386286 134.680381 612.449524 97.52381 566.930286 97.52381c-45.592381 0-83.553524 37.13219-83.553524 81.773714 0.097524 44.617143 38.058667 81.773714 83.553524 81.773714z m79.798857 170.959238l-64.536381-115.248762c-3.754667-3.681524-7.631238-7.387429-7.631238-11.166476l-7.631238-7.387428c-26.575238-26.087619-64.536381-29.744762-98.742857-14.872381l-178.395429 59.489523c-15.164952 3.705905-26.575238 18.578286-30.329905 33.450667l-15.164952 137.508571c-3.779048 22.25981 15.164952 44.617143 37.961143 48.323048h3.754666c22.79619 0 41.74019-14.872381 41.740191-37.156571l11.385905-107.739429 68.315428-22.259809c-11.410286 26.087619-22.820571 52.028952-30.354286 70.607238-15.164952 33.450667-15.164952 78.06781 3.779048 115.224381l-117.662476 267.580952c-11.385905 26.087619 0.316952 58.709333 26.575238 70.607238 30.012952 13.58019 65.828571-11.702857 75.922286-33.450667l87.332571-193.219047c53.126095 92.964571 113.883429 200.704 113.883429 204.409905 11.410286 18.553905 30.329905 29.744762 49.371428 29.744761 7.631238 0 18.919619-3.705905 26.575238-7.387428 26.550857-14.872381 37.936762-48.323048 22.77181-74.288762-3.754667-7.387429-94.841905-174.640762-155.623619-274.992762l53.150476-115.224381 18.919619 33.450667c3.779048 11.190857 15.164952 14.872381 22.796191 18.578286l117.662476 44.324571c3.754667 0 11.385905 3.705905 15.164952 3.705905 18.919619 0 34.206476-11.190857 41.740191-29.744762 3.85219-22.28419-7.558095-48.249905-30.232381-55.734857l-102.497524-37.132191z" fill="#ffffff" p-id="5514"></path></svg>
+            <div id="ufo-shadow"></div>
+            <div id="ufo-light"></div>
+        </div>
+    </section>
+
+    <!-- 引入js -->
+    <script src="./ufo.js"></script>
+</body>
+
+</html>

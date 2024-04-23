@@ -7,6 +7,10 @@
     opacity: 0.85;
 }
 
+#decorations * {
+    user-select: none;
+}
+
 #decorations .icon:hover {
     cursor: help;
 }
@@ -65,12 +69,54 @@
     position: absolute;
 }
 
-#dialogue4 {
-    width: 115px;
-}
-#dialogue1 {
-    width: 180px;
-}
 .dialogue p {
     font-size: 12px;
+    line-height: 16px;
+}
+
+#kiwi {
+    opacity: 1;
+}
+
+#kiwi {
+    position: relative;
+    transform: scale(0.85) scaleX(1);
+}
+
+#kiwi-body {
+    opacity: 0;
+}
+#kiwi-legs1 {
+    opacity: 0;
+}
+#kiwi-legs2 {
+    opacity: 0;
+}
+
+
+#apple {
+    top: -100px;
+    left: 24%;
+    transition: all 0.5s ease-in;
+    transform-origin: center;
+    z-index: 99999;
+}
+
+#ufo {
+    top: 89%; left: 85%;
+    transform-origin: center;
+    z-index: 99999;
+}
+
+#ufo-shadow {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scaleY(0.0) scaleX(0.0);
+    top: calc(89% + 3px); left: 85%;
+
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0) 100%);
+
+    transition: all 0.30s ease-in-out;
 }

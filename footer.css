@@ -32,13 +32,16 @@
 }
 
 #footer .left:hover {
-    background: rgba(185, 185, 185, 0.5);
+    background: rgba(185, 185, 185, 0.55);
     backdrop-filter: blur(1px);
+    cursor: default;
 }
 
 #footer .middle:hover {
     background: rgb(185, 185, 185);
+    cursor: default;
 }
 #footer .right:hover {
-    background: rgb(240, 246, 85);
+    background: #F2F76D;
+    cursor: default;
 }

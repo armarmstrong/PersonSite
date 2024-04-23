@@ -27,7 +27,7 @@ const markers = [
     {
         id: 'marker6', name: 'Lino',
         class: 'square dashed', text: 'B2',
-        RV: '2', PD: '1', location: [22, 88]
+        RV: '2', PD: '1', location: [22, 84]
     },
     {
         id: 'marker7', name: 'Play Time',
