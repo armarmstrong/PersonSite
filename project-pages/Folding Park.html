@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Folding Park</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <!-- 引入css -->
+  <link rel="stylesheet" href="./main-style.css">
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'ChineseFont', 'poppins', sans-serif;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    h5 {
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1; /* 将容器元素放置在其他元素的后面 */
+      /* 设置背景样式，例如背景图像 */
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(1px);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #cover {
+      position: relative;
+      width: 100%;
+      top: 0;
+    }
+
+    #cover > .container {
+      width: 100%;
+      /* background: blueviolet; */
+    }
+
+    #cover img {
+      width: 100%;
+      object-fit: cover;
+    }
+    
+
+    #intro {
+      margin: 30px 0;
+      padding: 30px;
+      position: relative;
+      /* background-color: yellow; */
+    }
+
+    #intro > .container { 
+      color: white;
+      /* background-color: rosybrown; */
+      
+      display: grid;
+      grid-template-columns: 700px 220px;
+      grid-template-rows: auto auto;
+      grid-gap: 20px 60px;
+    }
+
+    #intro > .container > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #intro .quote, .title {
+      height: 100%;
+      justify-content: flex-end;
+      /* background-color: seagreen; */
+      gap: 10px;
+    }
+
+    #intro .words {
+      margin: 0;
+    }
+
+    #intro .tags {
+      line-height: 16px;
+      gap: 8px;   
+    }
+
+    #intro .tags p {
+      font-size: 13px;
+    }
+
+    .words {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      margin-top: 30px;
+
+      gap: 10px;
+    }
+
+    .thin {
+      font-weight: 200;
+      font-size: 13px;
+    }
+
+    .italic {
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .link {
+      text-decoration: underline;
+    }
+
+    .link:hover {
+      text-decoration: none;
+      color: #f0f571;
+      cursor: pointer;
+    }
+
+    #footer {
+      height: 10px;
+      width: 100%;
+      position: relative;
+    }
+
+    #details{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      color: white;
+    }
+
+    #details > .container1 {
+      width: 1400px;
+      /* background-color: blue; */
+
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto;
+      position: relative;
+    }
+
+    #details > .container2 {
+      width: 1400px;
+      /* padding: 30px; */
+      margin-bottom: -8px;
+    }
+
+    #details img {
+      width: 100%;
+    }
+
+    #details > .container1 > div.left {
+      padding: 80px 30px 80px 80px;
+      /* background-color: white; */
+    }
+
+    #details > .container1 > div.right {
+      padding: 80px 80px 80px 30px;
+    }
+
+    @media (max-width: 1100px) {
+      #cover {
+        position: relative;
+        width: 100%;
+        height: 100vw;
+        overflow-x: scroll;
+      }
+
+
+      #cover img {
+        position: absolute;
+
+        height: 100vw; /* Scale image to fit container width */
+        width: auto; /* Maintain aspect ratio */
+        
+        display: block; /* Ensure image is treated as a block element */
+      }
+
+      
+      #intro > .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+      }
+
+      #details > div.container1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #details > div.container1 > div.left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 30px;
+      }
+
+      #details > div.container1 > div.right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 30px;
+      }
+
+      #details > div.container2 {
+        position: relative;
+        width: 100%;
+        height: 100vw;
+        overflow-x: scroll;
+      }
+
+
+      #details > div.container2 img {
+        position: absolute;
+
+        height: 100vw; /* Scale image to fit container width */
+        width: auto; /* Maintain aspect ratio */
+        
+        display: block; /* Ensure image is treated as a block element */
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="cover">
+    <div class="container">
+      <img src="../image/6-5.webp" alt="">
+    </div>
+    
+  </section>
+
+  <section id="intro">
+    <div class="container">
+      <div class="quote">
+        <p>
+          - The new way of working, the new way of living
+        </p>
+      </div>
+        
+      <div class="title">
+        <h1>[Folding Park]</h1>
+      </div>
+
+      <div class="words">
+        <h5>
+          The New Office Mode
+        </h5>
+        <p>
+          With the advancement of Internet technology, the open office concept is gradually replacing the outdated cubicle model, aiming to counteract the alienation caused by enclosed environments. The post-pandemic era has accelerated this transition, potentially leading to an even more open office model that embraces the urban context. Simultaneously, high-rise buildings are evolving to offer multifaceted and flexible functionalities.
+        </p>
+      </div>
+
+      <div class="tags">
+        <p>
+          <span class="thin">Type</span>&nbsp&nbsp Archtecture | Planning
+        </p>
+        <p>
+          <span class="thin">Work</span>&nbsp&nbsp Personal | Academic | Course: <span class="italic">High-rise Building Design</span>
+        </p>
+        <p>
+          <span class="thin">Site</span>&nbsp&nbsp Suzhou, Jiangsu province, China
+        </p>
+        <p>
+          <span class="thin">Time</span>&nbsp&nbsp 2022 Spring
+        </p>
+      </div>
+      
+    </div>
+    
+  </section>
+
+  <section id="details">
+    <div class="container1" style="background-color: #fff;"> 
+      <div class="left">
+        <img src="../image/6-0.webp" alt="">
+      </div>
+      <div class="right" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img src="../image/6-19.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="words left" style="color: black;">
+        <h5>
+          Site
+        </h5>
+        <p>
+          The site is situated in the central business district (CBD) near Dushu Lake, within the industry park of Suzhou. This location is renowned for being home to numerous tech companies and institutions, creating a vibrant and innovative atmosphere.
+        </p>
+        <p>
+          Being situated in such a dynamic and tech-focused environment offers unique opportunities for collaboration, knowledge sharing, and fostering a forward-thinking mindset in the design and development process.
+        </p>
+        <p>
+          In order to create a more open and spacious layout, I propose an alternative design that deviates from the traditional combination of a high-rise office building and a separate dress building. In this refined concept, the business facilities would be located underground, seamlessly connecting with the metro system, while a small park would be situated in front of the high-rise structure.
+        </p>
+      </div>
+      <div class="right">
+        <img src="../image/6-22.webp" alt="">
+        <img src="../image/6-1.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container2">
+      <div>
+        <img src="../image/6-7.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="words left" style="color: black;">
+        <h5>
+          Mixing & Folding
+        </h5>
+        <p>
+          In these high-rise towers, an ingenious "folding" approach has been adopted to create a harmonious interplay between indoor and outdoor spaces, forming spiraling lines. These lines correspond to the park landscapes and social public service functions respectively. Moreover, a dynamic shift can be observed from the interior to the exterior, seamlessly integrating park landscapes with social public services and blending urban public spaces with office environments. The result is a high-rise building and ground landscape complex that caters not only to creative professionals but also to the broader society.
+        </p>
+      </div>
+      <div class="right">
+        <img src="../image/6-4.webp" alt="">
+        <img src="../image/6-3.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="words left" style="color: black;">
+        <h5>Public Service</h5>
+        <p> 
+          The "folding" design concept combines indoor and outdoor spaces, creating a versatile platform for various public services. Park areas and public spaces are arranged in an alternating pattern, offering a harmonious blend of natural and constructed environments. Different levels of the building are dedicated to specific functions, allowing visitors to easily navigate and engage in diverse activities. This design promotes interactivity, creating a dynamic space for exhibitions, sports, and cultural events while providing serene park areas for relaxation and connection with nature.
+        </p>
+      </div>
+      <div class="right">
+        <img src="../image/6-15.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container2">
+      <div>
+        <img src="../image/6-6.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="left"  style="padding-left:232px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 15px;">
+        <img src="../image/6-24.webp" alt="">
+      </div>
+      <div class="right" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 15px;">
+        <img src="../image/6-16.webp" alt="">
+        <img src="../image/6-17.webp" alt="">
+      </div>
+    </div>
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="left" style="padding-left:196px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 15px;">
+        <img src="../image/6-20.webp" alt="">
+      </div>
+      <div class="right" style="color: black;">
+        <img src="../image/6-13.webp" alt="">
+      </div>
+    </div>
+
+    
+
+    <div class="container1" style="background-color: #fff;">
+      <div class="left" style="padding-left:232px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 15px;">
+        <img src="../image/6-8.webp" alt="">
+        <img src="../image/6-2.webp" alt="">
+        <img src="../image/6-10.webp" alt="">
+      </div>
+      <div class="right" style="color: black;">
+        <img src="../image/6-18.webp" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+
+  </section>
+
+  <script>
+    // Scroll to the right by 100 pixels
+    document.getElementById('cover').scrollLeft += 100;
+  </script>
+</body>
+</html>

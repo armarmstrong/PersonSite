@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project 2</title>
+  <title>Hill Making</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -182,6 +182,7 @@
       width: 1400px;
       /* padding: 30px; */
       /* background-color: blue; */
+      margin-bottom: -8px;
     }
 
     #details > .container3 {
@@ -281,9 +282,13 @@
         display: block; /* Ensure image is treated as a block element */
       }
 
+      #details > .container3 {
+        width: 100vw;
+      }
+
       .ytb-embed {
-        width: 100%;
-        aspect-ratio: 16/9;
+        width: 100vw;
+        height: 56.25vw;
       }
     }
   </style>
@@ -291,7 +296,7 @@
 <body>
   <section id="cover">
     <div class="container">
-      <img src="../image/1-0.webp" alt="">
+      <img src="../image/3-0.webp" alt="">
     </div>
     
   </section>
@@ -314,7 +319,7 @@ and Interactive Design
           
         </h5>
         <p>
-          “假山” (piled stone hill) also known as artificial mountains, are an integral element in traditional Chinese gardens, occupy- ing a unique space between the artificial and the natural. They are believed to have originated from the imaginative realm of the place of gods. As the literati class began con- structing private gardens, they materialized the essence of nature distilled in their refined landscape paintings.
+          “假山” (piled stone hill) also known as artificial mountains, are an integral element in traditional Chinese gardens, occupying a unique space between the artificial and the natural. They are believed to have originated from the imaginative realm of the place of gods. As the literati class began constructing private gardens, they materialized the essence of nature distilled in their refined landscape paintings.
         </p>
       </div>
 
@@ -355,6 +360,14 @@ and Interactive Design
         <h5>
           Problems to Solve
         </h5>
+        <p>Problem [1]</p>
+        <p>
+          Piled stone hills hold a significant place in Chinese culture, yet they remain shrouded in mystery, representing an esoteric discipline. The intricacies of their construction and design often prove challenging for the general public to comprehend. Unfortunately, the scarcity of data and research regarding this subject has hindered the advancement of this field.
+        </p>
+        <p>Problem [2]</p>
+        <p>
+          Additionally, piled stone hills serve as traditional entertainment spaces and are widely sought after by tourists and visitors. However, in today's digital age, the pure spatial encounter they offer may not be as novel as it once was.
+        </p>
       </div>
       <div class="right">
         <img src="../image/3-1.webp" alt="">
@@ -367,7 +380,10 @@ and Interactive Design
         <h5>Typological Study
           - Space in Piled Stone Hills</h5>
         <p>
-          Xian’ge hamlet has excellent transportation due to the construction of infrastructure, but the convienience has caused further loss of permanent population because of its small size and lack of pillar industries.
+          The first step is to understand the typological features of piled stone hills. I have studied the history of piled stone hills, their cultural significance, and their architectural features.
+        </p>
+        <p>
+          Utilizing Grasshopper, I developed a plugin that effortlessly generates 3D models showcasing various spatial arrangements within piled stone hills, solely relying on nodes and directions.
         </p>
       </div>
       <div class="right">
@@ -381,8 +397,12 @@ and Interactive Design
         <h5>Connecting the Dots
           - Space Syntax for Hills</h5>
         <p>
-          “Parade with gods”(游神) is a popular belief activity from Xian’ge hamlet. People invite the god’s statue into a sedan chair in the tem- ple and carry it out for a procession during festive occasions. This symbolizes the gods’ descent into the community to bless the area. “Parade with gods” embodies the essence of folk belief culture, rituals, and art, making it the quintessential representation of all belief activities.
-Folk beliefs and rutuals that are shared among residents of Xian’ge hamlet can serve as key factors in enhancing their cohesion and vitality, while also presenting new opportunities for development.
+          The next challenge is to combine these spaces. Inspired from Spatial Syntax and topological graph theory, I have devised a new graph for this issue, this graph is: <br>
+• planer - for readability; <br>
+• undirected - no clear direction in hills; <br>
+• cyclic - occasionally cyclic; <br>
+• weighted - representing length; <br>
+I have employed this graph to analyze several famed piled stone hills, confirming its feasibility in research and design.
         </p>
       </div>
       <div class="right">
@@ -432,7 +452,13 @@ With more available data, it becomes possible to integrate Machine Learning to e
 - Hardware and Data Flow
         </h5>
         <p>
-          During my research trip, I visited dozens of belief buildings/structures and traced their developmental trajectory. I was amazed by how a makeshift metal roof or a piece of red paper could sustain continuous religious devotion and I realized the profound spiritual power behind these simple sheds. Just like the rides in theme parks, I believe belief spaces in Chinese rural areas should be designed with low materiality,serving as containers for spirituality and public life.
+          The system design is based on the feedback loop, which is composed of three components: <br>
+          • Data Collection: Collecting data from sensors, including audio, video, and biometric data; <br>
+          • Backend Processing: Processing the data and generating projection materials; <br>
+          • Frontend Presentation: Using projector, LED matrix and audio system to create a visual and auditory experience. <br>
+        </p>
+        <p>
+          I have designed a prototype of the Sensus Stone - Module Unit based on GSR & PPG Sensors. The system is designed to capture the user’s emotional state according to the GSR and PPG signals, balencing the expense and accuracy of the system.
         </p>
       </div>
       <div class="right">

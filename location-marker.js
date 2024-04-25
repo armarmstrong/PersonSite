@@ -27,12 +27,17 @@ const markers = [
     {
         id: 'marker6', name: 'Lino',
         class: 'square dashed', text: 'B2',
-        RV: '2', PD: '1', location: [22, 84]
+        RV: '2', PD: '1', location: [22, 85]
     },
     {
         id: 'marker7', name: 'Play Time',
         class: 'circle filled', text: 'A3',
         RV: '3', PD: '2', location: [32, 30]
+    },
+    {
+        id: 'marker8', name: 'Play Time',
+        class: 'square dashed', text: 'B3',
+        RV: '3', PD: '2', location: [30, 84]
     },
 ]
 // 规则：
@@ -152,6 +157,7 @@ routeCtx.stroke();
 const tempMarkers2 = [
     markers[4],
     markers[5],
+    markers[7],
 ]
 // Draw lines
 routeCtx.strokeStyle = 'rgba(0, 0, 0, 0.5)';

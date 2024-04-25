@@ -1,0 +1,71 @@
+/* location marker */
+
+#location-marker {
+    /* background-color: aqua; */
+    position: absolute;
+
+    font-size: 18px;
+    font-weight: 400;
+    user-select: none;
+}
+
+#location-marker * {
+    z-index: 5;
+}
+
+
+#location-marker > div {
+    width: 32px;
+    aspect-ratio: 1;
+
+    opacity: 0.9;
+
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    padding-left: 0.05em;
+    padding-top: 0.05em;
+
+    cursor: pointer;
+}
+
+#location-marker > div:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    
+}
+
+#location-marker > .circle {
+    border-radius: 50%;
+}
+
+#location-marker > .square {
+    border-radius: 0;
+}
+
+#location-marker > .filled {
+    background-color: black;
+    color: white;
+}
+
+#location-marker > .solid {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+#location-marker > .dashed {
+    background-color: white;
+    border: 1px dashed black;
+    color: black;
+}
+
+#route-canvas {
+    position: absolute;
+    z-index: 0;
+}

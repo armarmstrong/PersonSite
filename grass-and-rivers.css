@@ -1,0 +1,84 @@
+#grass-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9;
+
+}
+
+#grass-container > .container {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: calc(100% - 16px); 
+    height: calc(100% - 16px); 
+    z-index: 0;
+
+    /* background-color: blueviolet; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#grass-container .block-row {
+    display: flex;
+    width: 100%;
+}
+
+#grass-container .inner-block-row {
+    display: flex;
+    width: 100%;
+}
+
+#grass-container .grass-block {
+    /* background-color: green;  */
+    opacity: 0.95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grass-container .plus {
+    position: absolute;
+
+    font-size: 18px;
+    font-weight: 50;
+    color: #000000;
+}
+
+#grass-container .inner-grass-block {
+    /* background-color: green;  */
+    opacity: 0.5;
+}
+
+#grass-container .selected {
+    border-radius: 16px;
+    /* border: 0px solid #6dc157; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#grass-container .inner-selected {
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 1;
+    background-size: 8px 8px;
+    background-image: repeating-linear-gradient(45deg, #0000007a 0, #0000007a 0.5px, rgba(233, 247, 230, 0) 0, rgba(233, 247, 230, 0) 50%);
+
+    transform: rotate(45deg);
+}
+
+
+
+
+
+

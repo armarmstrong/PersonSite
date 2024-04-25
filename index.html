@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="./crossline.css">
     <link rel="stylesheet" href="./footer.css">
     <link rel="stylesheet" href="./decorations.css">
+    <link rel="stylesheet" href="./grass-and-rivers.css">
+    <link rel="stylesheet" href="./location-marker.css">
 
     <!-- 加入ico -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.webp">
@@ -45,6 +47,9 @@
 <style>
     /* all */
     body {
+        /* background: #0dd460;
+        z-index: -9; */
+        /* overflow: hidden; */
     }
 
     #header {
@@ -63,7 +68,7 @@
     }
 
     #map {
-        /* background-color: rgb(197, 197, 197);
+        /* background-color: rgb(177, 30, 30);
         opacity: 0.5; */
         position: absolute;
         height: calc(100% - 36px);
@@ -145,83 +150,7 @@
         z-index: -1;
     }
 
-
-    /* location marker */
-
-    #location-marker {
-        /* background-color: aqua; */
-        position: absolute;
-
-        font-size: 18px;
-        font-weight: 400;
-        user-select: none;
-    }
-
-    #location-marker * {
-        z-index: 5;
-    }
     
-
-    #location-marker > div {
-        width: 32px;
-        aspect-ratio: 1;
-
-        opacity: 0.9;
-
-        position: absolute;
-        transform: translate(-50%, -50%) scale(1);
-        transition: transform 0.1s ease-in-out;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        
-        padding-left: 0.05em;
-        padding-top: 0.05em;
-
-        cursor: pointer;
-    }
-
-    #location-marker > div:hover {
-        transform: translate(-50%, -50%) scale(1.2);
-        
-    }
-
-    #location-marker > .circle {
-        border-radius: 50%;
-    }
-
-    #location-marker > .square {
-        border-radius: 0;
-    }
-
-    #location-marker > .filled {
-        background-color: black;
-        color: white;
-    }
-
-    #location-marker > .solid {
-        background-color: white;
-        border: 1px solid black;
-        color: black;
-    }
-
-    #location-marker > .dashed {
-        background-color: white;
-        border: 1px dashed black;
-        color: black;
-    }
-
-    #route-canvas {
-        position: absolute;
-        z-index: 0;
-    }
-
-    
-    
-    
-
     #overlay {
       position: absolute;
       /* background-color: rgba(185, 190, 38, 0.2); */
@@ -262,7 +191,7 @@
     <section id="header">
         <div class="container">
             <div class="header-title left">
-                <a class="eng"> 0 -- 10 ------- 50</a>
+                <a class="eng"></a>
                 <a class="zh"></a>
             </div>
             <!-- <div class="header-title middle">
@@ -310,6 +239,10 @@
         <div class="container">
             <!-- background pattern -->
             <canvas id="myCanvas"></canvas>
+
+            <!-- grass and rivers -->
+            <div id="grass-container"></div>
+
             <!-- contour lines -->
             <img src="./svg/Topo Map Contour Lines.svg" alt="contour"
             style="height: 100vh; width: 100vw; position: absolute; z-index: -1;
@@ -449,41 +382,9 @@
     <script src="./kiwi.js"></script>
     <script src="./ufo-and-footer.js"></script>
     <script src="./about-dropdown.js"></script>
-   
+    <script src="./apple-fall.js"></script>
 
-    <!-- apple fall -->
-
-    <script>
-        const apple = document.getElementById('apple');
-        const marker6 = document.getElementById('marker6');
-        let isFirstClick = true;
-
-        function startFallAnimation() {
-            apple.style.top = 0.16 * window.innerHeight + 'px';
-            
-            setTimeout(function() {
-                apple.style.transition = 'top 0.2s';
-                apple.style.top = (0.16 * window.innerHeight + 20) + 'px';
-                
-                setTimeout(function() {
-                    apple.style.top = (0.16 * window.innerHeight) + 'px';
-                }, 160);
-            }, 160);
-        }
-
-        marker6.addEventListener('click', function(event) {
-            if (isFirstClick) {
-                startFallAnimation();
-                isFirstClick = false;
-            } else {
-                showOverlay(marker6, './project-pages/Lino.html');
-            }
-        });
-
-        apple.addEventListener('click', function(event) {
-            window.open('https://github.com/armarmstrong?tab=repositories', '_blank');
-        });
-    </script>
+    <script src="./grass.js"></script>
 
    
     
