@@ -51,4 +51,4 @@ showOverlay(marker3, 'project-pages/City of Ecstasy.html');
 showOverlay(marker4, 'project-pages/Parade with Gods.html');
 showOverlay(marker5, './project-pages/Hill Making.html');
 showOverlay(marker7, './project-pages/Folding Park.html');
-
+showOverlay(marker6, './project-pages/Lino.html');

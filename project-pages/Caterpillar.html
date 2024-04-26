@@ -26,10 +26,10 @@
 
   <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'ChineseFont', 'poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'ChineseFont', 'poppins', sans-serif;
     }
 
     p {
@@ -50,11 +50,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: -1; /* 将容器元素放置在其他元素的后面 */
-      /* 设置背景样式，例如背景图像 */
+      z-index: -1;
       background-color: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(1px);
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -64,31 +62,25 @@
     #cover {
       position: relative;
       width: 100%;
-      top: 0;
     }
 
     #cover > .container {
       width: 100%;
-      /* background: blueviolet; */
     }
 
     #cover img {
       width: 100%;
       object-fit: cover;
     }
-    
 
     #intro {
       margin: 30px 0;
       padding: 30px;
       position: relative;
-      /* background-color: yellow; */
     }
 
     #intro > .container { 
       color: white;
-      /* background-color: rosybrown; */
-      
       display: grid;
       grid-template-columns: 700px 220px;
       grid-template-rows: auto auto;
@@ -104,7 +96,6 @@
     #intro .quote, .title {
       height: 100%;
       justify-content: flex-end;
-      /* background-color: seagreen; */
       gap: 10px;
     }
 
@@ -126,9 +117,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-
       margin-top: 30px;
-
       gap: 10px;
     }
 
@@ -170,8 +159,6 @@
 
     #details > .container1 {
       width: 1400px;
-      /* background-color: blue; */
-
       display: grid;
       grid-template-columns: 50% 50%;
       grid-template-rows: auto auto;
@@ -180,8 +167,6 @@
 
     #details > .container2 {
       width: 1400px;
-      /* padding: 30px; */
-      /* background-color: blue; */
       margin-bottom: -8px;
     }
 
@@ -191,7 +176,6 @@
 
     #details > .container1 > div.left {
       padding: 80px 30px 80px 80px;
-      /* background-color: white; */
     }
 
     #details > .container1 > div.right {
@@ -206,24 +190,19 @@
         overflow-x: scroll;
       }
 
-
       #cover img {
         position: absolute;
-
-        height: 100vw; /* Scale image to fit container width */
-        width: auto; /* Maintain aspect ratio */
-        
-        display: block; /* Ensure image is treated as a block element */
+        height: 100vw;
+        width: auto;
+        display: block;
       }
 
-      
       #intro > .container {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         gap: 20px;
       }
 
@@ -241,7 +220,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         padding: 30px;
       }
 
@@ -251,7 +229,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         padding: 30px;
       }
 
@@ -262,14 +239,11 @@
         overflow-x: scroll;
       }
 
-
       #details > div.container2 img {
         position: absolute;
-
-        height: 100vw; /* Scale image to fit container width */
-        width: auto; /* Maintain aspect ratio */
-        
-        display: block; /* Ensure image is treated as a block element */
+        height: 100vw;
+        width: auto;
+        display: block;
       }
     }
   </style>
@@ -343,116 +317,32 @@
     <div class="container1" style="background-color: #fff;">
       <div class="words left" style="color: black;">
         <h5>
-            The History of Snake Game
+          The History of Snake Game
         </h5>
         <p>
-            The snake game a classic game type that has been played for over 40 years. It is a simple game that requires the player to move a snake around the screen, eat food, and avoid hitting the walls, itself, or other snakes. The snake game is a simple game that is easy to learn and enjoy.
+          The snake game is a classic game genre that has been around for over 40 years. It is a simple game that requires the player to move a snake around the screen, eat food, and avoid hitting the walls, itself, or other snakes. The snake game is a simple game that is easy to learn and enjoy.
         </p>
         <p>
-            I would call it "Meta Game", cause it born very early, just 4 years later than "Pong", the first video game in the world. It was called "Blockade" as an arcade game, built by Gremlin's engineer Lane Hauck in 1976.
+          I would call it a "meta game" because it was born very early, just 4 years after "Pong", the first video game in the world. It was originally called "Blockade", an arcade game built by Gremlin engineer Lane Hauck in 1976.
         </p>
         <p>
-            The "Blockade" had been a hit as soon as it was released, however, 
-            after a series of business crisis and plagiarism, the innovator Lane Hauck 
-            was forced to design a new game "Hustle" based on it, which was more similar to classic snake game. Then, a bundle of games designed based on "Blockade" and "Hustle" were released.
+          "Blockade" was a hit as soon as it was released, however, after a series of business crises and plagiarism, the innovator Lane Hauck was forced to design a new game "Hustle" based on it, which was more similar to the classic snake game. Then, a bundle of games designed based on "Blockade" and "Hustle" were released.
         </p>
         <p>
-           Until 1980, someone finally found that the longer and longer object in these games looks like a snake, and they were called "snake" games.
+          It wasn't until 1980 that someone finally noticed that the longer and longer object in these games looked like a snake, and they were called "snake" games.
         </p>
         <p>
-            In 1995, Nokia's designer Taneli Armanto was incidentally assigned to develop a game for the new Nokia 6110. He successfully transplanted the snake game into the new platform. This game became the world's first indeed popular mobile game.
-            It even supported multiplayers to battle with each other.Over hundreds of millions of 
-            people played this game on Nokia phones.
+          In 1995, Nokia designer Taneli Armanto was coincidentally assigned to develop a game for the new Nokia 6110. He successfully transplanted the snake game to the new platform. This game became the world's first truly popular mobile game. It even supported multiplayer battles. Hundreds of millions of people played this game on Nokia phones.
         </p>
         <p>
-            From then on, the snake game has been the world's most popular game. Lots of derivative games were created, including "Snake 2", "Snake Xenzia", "Snake 3D" and "Slither.io".
+          From then on, the snake game has been one of the world's most popular games. Many derivative games have been created, including "Snake 2", "Snake Xenzia", "Snake 3D", and "Slither.io".
         </p>
 
       </div>
       <div class="right">
         <img src="../image/1-3.webp" alt="">
-      
       </div>
     </div>
-
-    <div class="container1" style="background-color: #fff;">
-      <div class="words left" style="color: black;">
-        <h3>[ROUND 2] Parade with gods</h3>
-        <p>
-          “Parade with gods”(游神) is a popular belief activity from Xian’ge hamlet. People invite the god’s statue into a sedan chair in the tem- ple and carry it out for a procession during festive occasions. This symbolizes the gods’ descent into the community to bless the area. “Parade with gods” embodies the essence of folk belief culture, rituals, and art, making it the quintessential representation of all belief activities.
-Folk beliefs and rutuals that are shared among residents of Xian’ge hamlet can serve as key factors in enhancing their cohesion and vitality, while also presenting new opportunities for development.
-        </p>
-      
-      </div>
-      <div class="right">
-        <img src="../image/1-4.webp" alt="">
-        <img src="../image/1-5.webp" alt="">
-        <img src="../image/1-6.webp" alt="">
-      </div>
-    </div>
-
-    <div class="container1" style="background-color: #fff;">
-      <div class="words left" style="color: black;">
-        <h3>Differnece</h3>
-
-        <h5>
-          From Snake to Caterpillar
-        </h5>
-
-        <p>
-          With exposure to belief cultures and spaces, I began to found connections to theme parks, recognizing their similarities to those temples and sacred places. The regional and independent nature of folk beliefs enables rural areas to devel- op distinct life philosophies, which are condensed into narrative experiences in belief spaces - similar experiences can also be found in the diverse attractions and rides within theme parks. Inspired by Robert Venturi, I proclaimed "learning from Disneyland," and borrowed three design methods: Zone Mapping, Symbol System, and Low Materiality. By "Fighting fire with fire," rural areas may have a chance to succeed in [Round 3].
-        </p>
-      
-      </div>
-      <div class="right">
-        <img src="../image/1-7.webp" alt="">
-      </div>
-    </div>
-
-    
-
-    <div class="container1" style="background-color: #fff;">
-      <div class="words left" style="color: black;">
-        <h5>
-          The Symbols
-- Why Belief Architectures Are Symbol Systems for Narrative Experience
-        </h5>
-
-        <p>
-          Husserl defined phenomenological method as discovering essence directly from phenomena through intuition. I used phenomenology to ex- plore the “genius loci” in belief spaces, observing a system of symbols, images, and artifacts.
-Unlike orthodox religions, Chinese folk beliefs pri- oritize practical benefits and secular connections, rooted in the traditional concept of the relation- ship between the individual, clan, and land. Rural belief spaces serve realistic purposes, such as in- doctrination and social order, while also satisfying people’s pursuit of worldly benefits, containing rich symbols, imagery, and narratives. These spaces function as a system of symbols with narrative capacities that align with “genius loci” in the Dis- neyland.
-I started to seek symbols to create the narrative experience.
-        </p>
-      
-      </div>
-      <div class="right">
-        <img src="../image/1-10.webp" alt="">
-      </div>
-    </div>
-
-    <div class="container1" style="background-color: #fff;">
-      <div class="words left" style="color: black;">
-        <h5>
-          Low Materiality
-- Containers for Spirituality and Public Life
-        </h5>
-
-        <p>
-          During my research trip, I visited dozens of belief buildings/structures and traced their developmental trajectory. I was amazed by how a makeshift metal roof or a piece of red paper could sustain continuous religious devotion and I realized the profound spiritual power behind these simple sheds. Just like the rides in theme parks, I believe belief spaces in Chinese rural areas should be designed with low materiality,serving as containers for spirituality and public life.
-        </p>
-      
-      </div>
-      <div class="right">
-        <img src="../image/1-11.webp" alt="">
-      </div>
-    </div>
-
-    <div class="container2">
-      <div>
-        <img src="../image/1-2.webp" alt="">
-      </div>
-    </div>
-
   </section>
 
   <section id="footer">
