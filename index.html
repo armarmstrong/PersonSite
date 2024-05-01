@@ -184,10 +184,34 @@
       z-index: 6665;
     }
 
+    #kiwi-test {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    #kiwi-test > img {
+        width: 100px;
+        height: 100px;
+    }
+
 </style>
 </head>
 
 <body>
+    <div id="kiwi-test">
+        <img id="kiwi-stand" class="icon" src="./icon/kiwi-bird-svgrepo-com.svg">
+        <img style="opacity: 1;" id="kiwi-body" class="icon" src="./icon/kiwi.svg">
+        <img style="opacity: 1;" id="kiwi-legs1" class="icon" src="./icon/Kiwi Bird (1).svg">
+        <img style="opacity: 1;" id="kiwi-legs2" class="icon" src="./icon/Kiwi Bird (2).svg">
+    </div>
     <section id="header">
         <div class="container">
             <div class="header-title left">

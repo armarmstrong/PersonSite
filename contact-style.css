@@ -160,16 +160,13 @@
 }
 
 /* #identity > .identity-roll {
-    animation: roll 1s linear infinite;
+    top: 35px;
+    animation: slideUp 5s linear infinite; 
 }
 
-@keyframes roll {
-    0% {
-        transform: translate(0,0)
-    }
-    100% {
-        transform: translate(0, -100%)
-    }
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
 } */
 
 #emailModal {

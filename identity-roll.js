@@ -30,48 +30,50 @@ identityDiv.style.alignItems = "flex-start";
 identityDiv.style.justifyContent = "center";
 identityDiv.style.position = "absolute";
 
-var identityDivCopy = identityDiv.cloneNode(true);
+// var identityDivCopy = identityDiv.cloneNode(true);
 
 for (centent in identityContent) {
-    var name = identityContent[centent].name;
+    var nam = identityContent[centent].name;
     var font = identityContent[centent].font;
 
     var identity = document.createElement("p");
-    identity.textContent = name;
+    identity.textContent = nam;
     identity.style.fontFamily = font;
     identityDiv.appendChild(identity);
-    identityDivCopy.appendChild(identity.cloneNode(true));
+    // identityDivCopy.appendChild(identity.cloneNode(true));
 }
 
-
+identityContainer.appendChild(identityDiv);
 
 var delay = 10000;
 
 function animateIdentity(div) {
-    identityContainer.appendChild(div);
+    // identityContainer.appendChild(identityDiv);
     div.animate([
         {transform: "translateY(35px)"},
-        {transform: "translateY(calc(-100% - 35px))"}
+        {transform: "translateY(calc(-100%))"}
     ], {
         duration: delay,
         easing: "linear",
-        iterations: 1
+        iterations: Infinity
     });
-    div.style.transform = "translateY(35px)"
 }
 
-function doubleAnimateIdentity() {
-    animateIdentity(identityDiv);
-    setTimeout(() => {
-        animateIdentity(identityDivCopy);
-    }, delay - delay * 0.16);
-}
+animateIdentity(identityDiv);
 
-function infinityAnimateIdentity() {
-    doubleAnimateIdentity()
-    setInterval(() => {
-        doubleAnimateIdentity();
-    }, delay * 2  - delay * 0.32);
-}
 
-infinityAnimateIdentity();
+// function doubleAnimateIdentity() {
+//     animateIdentity(identityDiv);
+//     setTimeout(() => {
+//         animateIdentity(identityDivCopy);
+//     }, delay - delay * 0.16);
+// }
+
+// function infinityAnimateIdentity() {
+//     doubleAnimateIdentity()
+//     setInterval(() => {
+//         doubleAnimateIdentity();
+//     }, delay * 2  - delay * 0.32);
+// }
+
+// infinityAnimateIdentity();
