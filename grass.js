@@ -21,7 +21,7 @@ function createGrassGrid(grassContainer, numberOfBlocks) {
     for (const block of grassBlocks) {
         const plus = document.createElement('p');
         plus.classList.add('plus');
-        plus.textContent = '+';
+        plus.textContent = '/';
         block.appendChild(plus);
     }
 

@@ -151,6 +151,7 @@ function ufoAnimation3() {
                     ufo.style.left = ufoLeft + 'px';
                     ufo.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(200)';
                     
+                    contactIframe.src = 'contact.html';
                     contactIframe.style.display = 'block';
                     contactIframe.style.width = '100%';
                     contactIframe.style.height = '100%';
@@ -161,7 +162,7 @@ function ufoAnimation3() {
                         ufo.style.top = ufoInitialTop + 'px';
                         ufo.style.left = ufoInitialLeft + 'px';
                         // ufoAnimation3Running = false;
-                    }, 10);
+                    }, 100);
                 }, 80); 
             }, 400);    
         }, 800);   
@@ -200,6 +201,7 @@ contactButton.addEventListener('click', function(event) {
 });
 
 const fullMapButton = document.getElementById('fullmap');
+
 fullMapButton.addEventListener('click', function(event) {
     hideOverlay();
 

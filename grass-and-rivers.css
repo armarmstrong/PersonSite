@@ -68,14 +68,14 @@
     align-items: center;
 }
 
-#grass-container .inner-selected {
+/* #grass-container .inner-selected {
     background-color: rgba(255, 255, 255, 0);
     opacity: 1;
     background-size: 8px 8px;
     background-image: repeating-linear-gradient(45deg, #0000007a 0, #0000007a 0.5px, rgba(233, 247, 230, 0) 0, rgba(233, 247, 230, 0) 50%);
 
     transform: rotate(45deg);
-}
+} */
 
 
 
