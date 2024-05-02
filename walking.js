@@ -11,10 +11,25 @@ var walkingIconSrcs = [
     "./icon/walking/walking-8.svg",
     "./icon/walking/walking-9.svg"
 ]; 
-const walkingIcon = document.getElementById("walking");
+const walkingContainer = document.getElementById("walking");
 
 var walkingIndex = 0;
+var walkingIcons = [];
 
+
+for (let i = 0; i < walkingIconSrcs.length; i++) {
+    const icon = document.createElement("img");
+    icon.src = walkingIconSrcs[i];
+    icon.style.display = "none";
+    icon.style.position = "absolute";
+    icon.style.top = "0";
+    icon.style.left = "0";
+    icon.style.width = "100%";
+    icon.style.height = "100%";
+    
+    walkingIcons.push(icon);
+    walkingContainer.appendChild(icon);
+}
 
 
 // function animateWalking() {
@@ -68,6 +83,8 @@ var walkingIndex = 0;
 function animateWalking2() {
     let lastScrollY = window.pageYOffset;
     let scrollSpeed = 0; // Initialize scrollSpeed to 0
+    let walkingIndex = 0;
+    walkingIcons[walkingIndex].style.display = "block";
 
     window.addEventListener("scroll", () => {
 
@@ -77,7 +94,7 @@ function animateWalking2() {
 
         if (currentScrollY === 0 ||
             currentScrollY === document.documentElement.scrollHeight - window.innerHeight) {
-            scrollSpeed = 1; // Reset scrollSpeed if reached top or bottom
+            scrollSpeed = 1; 
         } else if (newScrollSpeed > 0) {
             scrollSpeed = newScrollSpeed;
         }
@@ -89,14 +106,13 @@ function animateWalking2() {
 
         lastScrollY = currentScrollY;
 
-        for (let i = 0; i < scrollSpeed * 0.1; i++) {
-            walkingIcon.src = walkingIconSrcs[walkingIndex];
-            setTimeout(() => {
-                walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
-            }, 1000 / scrollSpeed);
+        for (let i = 0; i < scrollSpeed * 0.001; i++) {
+            walkingIcons[walkingIndex].style.display = "none";
+            walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
+            walkingIcons[walkingIndex].style.display = "block";
         }
     });
-
+    
     
 }
 
