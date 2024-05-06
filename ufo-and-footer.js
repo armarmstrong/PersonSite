@@ -151,8 +151,7 @@ function ufoAnimation3() {
                     ufo.style.left = ufoLeft + 'px';
                     ufo.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(200)';
                     
-                    contactIframe.src = 'contact.html';
-                    contactIframe.style.display = 'block';
+                    // contactIframe.style.display = 'block';
                     contactIframe.style.width = '100%';
                     contactIframe.style.height = '100%';
                     // contactIframe.style.opacity = '80%';
@@ -186,14 +185,17 @@ contactButton.addEventListener('click', function(event) {
     if (ufoClick === 0) {
         ufoClick++;
         ufoAnimation1();
+        contactIframe.src = 'contact.html';
     } else if (ufoClick === 1) {
         ufoClick++;
         ufoAnimation2();
+        contactIframe.src = 'contact.html';
     } else if (contactIframe.style.display === 'none' 
     && overlayIframe.style.display === 'none' 
     && ufo.style.top === ufoInitialTop + 'px'
     && ufoAnimation1Running === false
     && ufoAnimation2Running === false) {
+        contactIframe.style.display = 'block';
         ufoAnimation3();
     } else {
         ufoAnimation2();

@@ -32,6 +32,56 @@ for (let i = 0; i < walkingIconSrcs.length; i++) {
 }
 
 
+function animateWalking2() {
+    let lastScrollY = window.pageYOffset;
+    let scrollSpeed = 0; // Initialize scrollSpeed to 0
+    let walkingIndex = 0;
+    walkingIcons[walkingIndex].style.display = "block";
+
+    window.addEventListener("scroll", () => {
+
+
+        const currentScrollY = window.pageYOffset;
+        const newScrollSpeed = Math.abs(currentScrollY - lastScrollY);
+
+        if (currentScrollY === 0 ||
+            currentScrollY === document.documentElement.scrollHeight - window.innerHeight) {
+            scrollSpeed = 1; 
+        } else if (newScrollSpeed > 0) {
+            scrollSpeed = newScrollSpeed;
+        }
+
+        lastScrollY = currentScrollY;
+
+        scaledScrollSpeed = scrollSpeed * 0.3;
+
+        if (scaledScrollSpeed < 2) {
+            return;
+        } else if (scaledScrollSpeed < 8) {
+            for (let i = 0; i < 2; i++) {
+                walkingIcons[walkingIndex].style.display = "none";
+                walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
+                walkingIcons[walkingIndex].style.display = "block";  
+            }
+        } else if (scaledScrollSpeed >= 6) {
+            for (let i = 0; i < scrollSpeed - 2; i++) {
+            
+                walkingIcons[walkingIndex].style.display = "none";
+                walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
+                walkingIcons[walkingIndex].style.display = "block";
+                
+            }
+        }
+
+
+        
+    }); 
+}
+
+animateWalking2();
+
+
+
 // function animateWalking() {
 //     walkingIcon.src = walkingIconSrcs[walkingIndex];
 //     walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
@@ -78,46 +128,6 @@ for (let i = 0; i < walkingIconSrcs.length; i++) {
 //         animateWalkingStop();
 //     } 
 // }); 
-
-
-function animateWalking2() {
-    let lastScrollY = window.pageYOffset;
-    let scrollSpeed = 0; // Initialize scrollSpeed to 0
-    let walkingIndex = 0;
-    walkingIcons[walkingIndex].style.display = "block";
-
-    window.addEventListener("scroll", () => {
-
-
-        const currentScrollY = window.pageYOffset;
-        const newScrollSpeed = Math.abs(currentScrollY - lastScrollY);
-
-        if (currentScrollY === 0 ||
-            currentScrollY === document.documentElement.scrollHeight - window.innerHeight) {
-            scrollSpeed = 1; 
-        } else if (newScrollSpeed > 0) {
-            scrollSpeed = newScrollSpeed;
-        }
-
-        
-        // const delay = scrollSpeed === 0 ? 1000 : Math.max(50, 1000 / scrollSpeed);
-
-        // scrollSpeedElement.textContent = `Delay: ${scrollSpeed}`;
-
-        lastScrollY = currentScrollY;
-
-        for (let i = 0; i < scrollSpeed * 0.001; i++) {
-            walkingIcons[walkingIndex].style.display = "none";
-            walkingIndex = (walkingIndex + 1) % walkingIconSrcs.length;
-            walkingIcons[walkingIndex].style.display = "block";
-        }
-    });
-    
-    
-}
-
-animateWalking2();
-
 
 
 // SCROLL SPEED TEST

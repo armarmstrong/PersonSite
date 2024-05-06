@@ -45,6 +45,10 @@
     transform: translate(-50%, -50%) rotate(-0deg);
 }
 
+#walking img {
+    transition: all 0.5s ease-in-out; /* Increased duration from 0.2s to 0.5s */
+}
+
 #ufo-shadow {
     display: none;
 
@@ -263,8 +267,6 @@
     left: 51%;
     z-index: 999;
     height: 16%;
-
-    opacity: 75%;
 }
 
 @media (max-width: 900px) {
