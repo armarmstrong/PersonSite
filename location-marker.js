@@ -2,42 +2,50 @@ const markers = [
     {
         id: 'marker1', name: 'Aurora House',
         class: 'circle filled', text: 'A1',
-        RV: '2', PD: '1', location: [22, 9]
+        RV: '2', PD: '1', location: [22, 9], 
+        src: './project-covers/A1.webp', width: '22%'
     },
     {
         id: 'marker2', name: 'Go Above or Below',
         class: 'circle filled', text: 'A2',
-        RV: '2', PD: '2', location: [26, 28]
+        RV: '2', PD: '2', location: [26, 28], 
+        src: './project-covers/A2.webp', width: '25%'
     },
     {
         id: 'marker3', name: 'City of Ecstasy',
         class: 'circle filled', text: 'A4',
-        RV: '7', PD: '3', location: [78, 33]
+        RV: '7', PD: '3', location: [78, 33], 
+        src: './project-covers/A4.webp', width: '15%'
     },
     {
         id: 'marker4', name: 'Parade with Gods',
         class: 'circle filled', text: 'A5',
-        RV: '6', PD: '2', location: [65, 28]
+        RV: '6', PD: '2', location: [65, 28], 
+        src: './project-covers/A5.webp', width: '15%'
     },
     {
         id: 'marker5', name: 'Hill Making',
         class: 'square solid', text: 'B1',
-        RV: '1', PD: '5', location: [12, 56]
+        RV: '1', PD: '5', location: [12, 56], 
+        src: './project-covers/B1.webp', width: '15%'
     },
     {
         id: 'marker6', name: 'Lino',
         class: 'square dashed', text: 'B2',
-        RV: '2', PD: '1', location: [22, 85]
+        RV: '2', PD: '1', location: [22, 85], 
+        src: './project-covers/B2.webp', width: '15%'
     },
     {
         id: 'marker7', name: 'Play Time',
         class: 'circle filled', text: 'A3',
-        RV: '3', PD: '2', location: [32, 30]
+        RV: '3', PD: '2', location: [32, 30], 
+        src: './project-covers/A3.webp', width: '15%'
     },
     {
         id: 'marker8', name: 'Play Time',
         class: 'square dashed', text: 'B3',
-        RV: '3', PD: '2', location: [30, 84]
+        RV: '3', PD: '2', location: [30, 84], 
+        src: './project-covers/B3.webp', width: '15%'
     },
 ]
 // 规则：
@@ -45,8 +53,15 @@ const markers = [
 // circle = 建筑 / square = 交互 / 
 // filled = 完成 / solid = 进行中 / dashed = idea（未开始）
 
+
+
+
+
+
 // 获取容器元素
 const container = document.getElementById('location-marker');
+
+const projectCovers = document.getElementById('project-covers');
 
 // 遍历 Marker 数据并创建元素
 markers.forEach(marker => {
@@ -72,6 +87,27 @@ markers.forEach(marker => {
 
     // 将 div 元素添加到容器元素
     container.appendChild(div);
+
+    
+
+    div.addEventListener('mouseover', () => {
+        // 显示项目封面
+        projectCovers.src = marker.src;
+        projectCovers.onload = () => {
+            var randomAngle = ((markers.indexOf(marker) % 2) * 2 - 1) * 6;
+        
+            projectCovers.style.width = marker.width;
+            projectCovers.style.boxShadow = `0 0 16px rgba(0, 0, 0, 0.3)`;
+            projectCovers.style.transform = `translate(-50%, -50%) rotate(${randomAngle}deg)`;
+            projectCovers.style.display = 'block';
+          };
+    });
+
+    div.addEventListener('mouseout', () => {
+        // 隐藏项目封面
+        projectCovers.style.display = 'none';
+    });
+
 });
 
 
