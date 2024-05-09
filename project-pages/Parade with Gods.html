@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Project 2</title>
+  <title>Prade with Gods</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,8 @@
   <!-- 引入css -->
   <link rel="stylesheet" href="../main-style.css">
   <link rel="stylesheet" href="../copyright.css">
+  <link rel="stylesheet" href="../project-pages-style.css">
+
 
   <style>
     
@@ -81,7 +83,7 @@
     
 
     #intro {
-      margin: 30px 0;
+      margin: 40px 0 80px 0;
       padding: 30px;
       position: relative;
       /* background-color: yellow; */
@@ -342,15 +344,16 @@ with cities?
       <div class="left">
         <img src="../image/1-1.webp" alt="">
       </div>
-      <div class="right" style="margin-left: 30px; margin-right: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
-        <img src="../image/1-15.webp" alt="">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 15px;">
-          <img src="../image/1-19.webp" alt="">
-          <img src="../image/1-20.webp" alt="">
-
-          <img src="../image/1-17.webp" alt="">
-          <img src="../image/1-18.webp" alt="">
+      <div class="right" style="margin-left: 30px; margin-right: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        
+        <img id="slider-image" src="" alt="">
+        
+        <div class="arrows">
+          <p id="left-arrow"><</p>
+          <div class="dots"></div>
+          <p id="right-arrow">></p>
         </div>
+
       </div>
     </div>
 
@@ -458,9 +461,34 @@ I started to seek symbols to create the narrative experience.
     </div>
   </section>
 
+  <script src="../slider.js"></script>
+
+  <script>
+    const arrows = document.querySelector('.arrows');
+    const leftArrow = document.querySelector('.arrows > p:nth-child(1)');
+    const rightArrow = document.querySelector('.arrows > p:nth-child(3)');
+    const dotsContainer = document.querySelector('.dots');
+    const sliderImage = document.getElementById('slider-image');
+
+    var sliderImages = [
+      "../image/1-15.webp",
+      "../image/1-14.webp",
+      "../image/1-19.webp",
+      "../image/1-16.webp",
+      "../image/1-17.webp",
+      "../image/1-20.webp",
+      "../image/1-18.webp",
+      "../image/1-9.webp",
+    ];
+
+    slider(sliderImages, sliderImage, leftArrow, rightArrow);
+  </script>
+
   <script>
     // Scroll to the right by 100 pixels
     document.getElementById('cover').scrollLeft += 100;
   </script>
+
+  
 </body>
 </html>

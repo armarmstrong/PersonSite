@@ -6,7 +6,7 @@
     height: 200px;
     color: #ffffff;
 
-    background-color: black;
+    background-color: linear-gradient(to bottom, #00000000, #000000);
 }
 
 #copyright > .container {

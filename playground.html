@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" background-color: #f4f3f0>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playground</title>
+
+    <!-- 引入字体图标库 -->
+    
+    <!-- 引入Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pixelify -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Long Cang -->
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Jacquard 24 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet">
+    <!-- Roboto Slab -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Platypi -->
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Lugrasimo -->
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <!-- Lobster -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Caveat -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Jersey 10 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./main-style.css">
+    <link rel="stylesheet" href="./contact-style.css">
+
+    <!-- 加入ico -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/favicon-32x32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/favicon-16x16.webp">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+    body {
+        background: #000000;
+    }
+
+    .container {
+    /* background-color: aqua; */
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    }
+
+    #copyright {
+        /* background: #333; */
+        position: absolute;
+        top: 16px;
+        width: calc(100% - 72px);
+        color: #ffffff;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        margin: 0 36px 0 36px;
+
+        z-index: 1000;
+
+        background-color: linear-gradient(to bottom, #00000000, #000000);
+    }
+
+    #copyright > .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+    }
+
+    #copyright > .container > p:nth-child(1) {
+        left: 0;
+        user-select: none;
+    }
+
+    #copyright > .container > p:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #copyright > .container > a {
+        right: 0;
+    }
+
+    #slider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        /* background-color: blueviolet; */
+        color: aliceblue;
+    }
+
+    .arrows {
+        width: 100%; height: 30px;
+        display: flex; justify-content: center; align-items: center;
+        position: absolute; 
+        bottom: 16px;
+        user-select: none; 
+    }
+
+    .arrows > p:hover {
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .arrows > p {
+        font-size: 24px; 
+        font-family: 'Roboto'; 
+        font-weight: 200;
+    }
+
+    .dots {
+        margin: 0 20px 0 20px; 
+        display: flex; justify-content: center; align-items: center; 
+        gap: 0.5vw;
+    }
+
+    .dots > p {
+        font-size: 6px;
+    }
+
+    #iframe-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 85%;
+        background-color: #000000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        overflow: hidden;
+    }
+
+    .playground-iframe {
+        width: 70%;
+        height: calc(100% - 40px);
+        border: none;
+        /* opacity: 0.4; */
+
+        position: absolute;
+
+        border-radius: 6px;
+        box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+    }
+
+    .slide-left {
+        transform: scale(0.75);
+        left: -20%;
+        z-index: 1;
+        display: block;
+        opacity: 0.5;
+        transition: all 0.4s ease;
+    }
+
+    .slide-right {
+        transform: scale(0.75);
+        right: -20%;
+        z-index: 1;
+        display: block;
+        opacity: 0.5;
+        transition: all 0.4s ease;
+    }
+
+    .slide-front {
+        transform: scale(1);
+        z-index: 2;
+        display: block;
+        opacity: 1;
+        transition: all 0.2s ease;
+    }
+
+    .slide-back {
+        transform: scale(1);
+        z-index: 0;
+        display: block;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    #faked-iframe-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+
+        background: linear-gradient(to right, #000000, #00000000);
+        
+        width: 15%;
+        height: 100%;
+    }
+
+    #faked-iframe-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+
+        background: linear-gradient(to left, #000000, #00000000);
+        
+        width: 15%;
+        height: 100%;
+    }
+
+    .clickable:hover {
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id="faked-iframe-left"></div>
+    <div id="faked-iframe-right"></div>
+    
+    <section id="slider">
+        <div class="container">
+            <div id="iframe-container">
+
+            </div>
+            <div class="arrows">
+              <p id="left-arrow"><</p>
+              <div class="dots"></div>
+              <p id="right-arrow">></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="copyright">
+        <div class="container">
+            <p id="back-button" class="clickable">Back <span>↩</span> </p> 
+            <p>© 2024 <NAME>Yixi Wu</NAME>. All rights reserved.</p>
+            <a href="">Buy me a coffee</a>
+        </div>
+    </section>
+
+
+
+    <!-- 引入js -->
+    <script>
+        const arrows = document.querySelector('.arrows');
+        const leftArrow = document.querySelector('.arrows > p:nth-child(1)');
+        const rightArrow = document.querySelector('.arrows > p:nth-child(3)');
+        const dotsContainer = document.querySelector('.dots');
+
+        var iframes = [
+            {src:'./project-pages/Lino.html', title:'Lino', id:'lino', background:'hsl(200, 50%, 50%)'},
+            {src:'', title:'', id:'', background:'hsl(200, 50%, 50%)'},
+            {src:'', title:'', id:'', background:'hsl(200, 50%, 50%)'},
+            {src:'', title:'', id:'', background:'hsl(200, 50%, 50%)'},
+            {src:'', title:'', id:'', background:'hsl(200, 50%, 50%)'},
+        ];
+
+        for (let i = 0; i < iframes.length; i++) {
+            const dot = document.createElement('p');
+            dot.innerText = '●';
+            dot.style.opacity = 0.5;
+            dot.classList.add('dot');
+            dotsContainer.appendChild(dot);
+        }
+
+        const iframeContainer = document.getElementById('iframe-container');
+
+        iframes.forEach(element => {
+            const iframe = document.createElement('iframe');
+            iframe.src = element.src;
+            iframe.title = element.title;
+            iframe.id = element.id;
+            iframe.classList.add('playground-iframe');
+            iframe.style.backgroundColor = element.background;
+            iframeContainer.appendChild(iframe);
+        });
+
+        
+        // let currentIndex = Math.floor(iframes.length / 2);
+        let currentIndex = 0;
+        
+        const playgroundIframes = document.querySelectorAll('.playground-iframe');
+        
+        previousIndex = (currentIndex - 1 + playgroundIframes.length) % playgroundIframes.length;
+        nextIndex = (currentIndex + 1) % playgroundIframes.length;
+
+        playgroundIframes[currentIndex].classList.add('slide-front');
+        playgroundIframes[previousIndex].classList.add('slide-left');
+        playgroundIframes[nextIndex].classList.add('slide-right');
+
+        for (let i = 0; i < playgroundIframes.length; i++) {
+            if (i !== currentIndex && i !== previousIndex && i !== nextIndex) {
+                playgroundIframes[i].classList.add('slide-back');
+            }
+        }
+
+        const dots = document.querySelectorAll('.dot');
+        dots[currentIndex].style.opacity = 1;
+
+        leftArrow.addEventListener('click', () => {
+            // Update dots
+            dots[(currentIndex - 1 + dots.length) % dots.length].style.opacity = 1; // Wrap around for dots
+            dots[currentIndex].style.opacity = 0.5;
+
+            // Update indexes
+            nextIndex = currentIndex;
+            currentIndex = (currentIndex - 1 + playgroundIframes.length) % playgroundIframes.length;
+            previousIndex = (currentIndex - 1 + playgroundIframes.length) % playgroundIframes.length;
+
+            // Update iframe classes
+            for (let i = 0; i < playgroundIframes.length; i++) {
+                playgroundIframes[i].classList.remove('slide-front', 'slide-left', 'slide-right', 'slide-back');
+            }
+            playgroundIframes[currentIndex].classList.add('slide-front');
+            playgroundIframes[previousIndex].classList.add('slide-left');
+            playgroundIframes[nextIndex].classList.add('slide-right');
+            for (let i = 0; i < playgroundIframes.length; i++) {
+                if (i !== currentIndex && i !== previousIndex && i !== nextIndex) {
+                playgroundIframes[i].classList.add('slide-back');
+                }
+            }
+        });
+
+        rightArrow.addEventListener('click', () => {
+            // Update dots
+            dots[currentIndex].style.opacity = 0.5;
+            dots[(currentIndex + 1) % dots.length].style.opacity = 1; // Wrap around for dots
+
+            // Update indexes
+            previousIndex = currentIndex;
+            currentIndex = (currentIndex + 1) % playgroundIframes.length;
+            nextIndex = (currentIndex + 1) % playgroundIframes.length;
+
+            // Update iframe classes
+            for (let i = 0; i < playgroundIframes.length; i++) {
+                playgroundIframes[i].classList.remove('slide-front', 'slide-left', 'slide-right', 'slide-back');
+            }
+            playgroundIframes[currentIndex].classList.add('slide-front');
+            playgroundIframes[previousIndex].classList.add('slide-left');
+            playgroundIframes[nextIndex].classList.add('slide-right');
+            for (let i = 0; i < playgroundIframes.length; i++) {
+                if (i !== currentIndex && i !== previousIndex && i !== nextIndex) {
+                playgroundIframes[i].classList.add('slide-back');
+                }
+            }
+        });
+       
+    </script>
+
+    <script>
+        const backButton = document.getElementById('back-button');
+        backButton.addEventListener('click', () => {
+            // Close the current tab
+            window.close();
+
+            // If the current tab is the last tab, focus the previous tab
+            if (window.length === 0) {
+            window.opener.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>

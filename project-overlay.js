@@ -20,6 +20,7 @@ function showOverlay(marker, projectPageLink) {
             // Wait for a short delay (e.g., 500 milliseconds) before showing the overlay
             setTimeout(function() {
                 // Show the overlay
+                overlay.style.transition = 'all 0.5s ease-in-out';
                 overlay.style.top = '48px';
                 overlay.style.height = 'calc(100% - 48px)';
                 

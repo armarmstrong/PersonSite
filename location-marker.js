@@ -9,7 +9,7 @@ const markers = [
         id: 'marker2', name: 'Go Above or Below',
         class: 'circle filled', text: 'A2',
         RV: '2', PD: '2', location: [26, 28], 
-        src: './project-covers/A2.webp', width: '25%'
+        src: './project-covers/A2.webp', width: '15%'
     },
     {
         id: 'marker3', name: 'City of Ecstasy',
@@ -56,11 +56,9 @@ const markers = [
 
 
 
-
-
 // 获取容器元素
 const container = document.getElementById('location-marker');
-
+// 获取项目封面元素
 const projectCovers = document.getElementById('project-covers');
 
 // 遍历 Marker 数据并创建元素

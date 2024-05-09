@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Full Map</title>
 
     <!-- 引入字体图标库 -->
     
@@ -113,7 +113,7 @@
         font-family: 'long cang';
     }
 
-    #header #about:hover {
+    #header .clickable:hover {
         cursor: pointer;
     }
 
@@ -135,6 +135,13 @@
         cursor: pointer;  
     }
 
+    #header .clickable > a {
+        font-weight: 400;  
+    }
+
+    #header .clickable > a:hover {
+        font-weight: 400;  
+    }
 
     /* map */
 
@@ -157,7 +164,7 @@
       z-index: 6666;
       width: 100%;
 
-      transition: 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
       top: 100%;
       
       box-shadow: 0px -12px 16px rgba(0, 0, 0, 0.3);
@@ -202,7 +209,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-8deg);
-        z-index: 9999;
+        z-index: 99;
+
+        transition: all 0.8s ease-in-out;
     }
 
 </style>
@@ -229,13 +238,24 @@
                     <div id="plus" style="transition: 0.1s ease-in-out;
                     transform: 'rotate(0deg)'; font-weight: 300;">+</div>
                 </div>
-                <div class="dropdown" id="about-dropdown" style="display: none;position: fixed; top: 48px; right: 48px;">
+                <div class="dropdown" id="about-dropdown" style="display: none; position: fixed; top: 48px; right: 48px;">
                     <a class="eng" id="about-dropdown1">What is THIS ?</a>
                     <a class="eng" id="about-dropdown2">How it works ?</a>
                     <a class="eng" id="about-dropdown3">Why so cool ?</a>
-                    <div id="about-dropdown3">
-                        <img src="./svg/Filter.svg" alt="" style="width: 10px;">
-                        <a class="eng">Filter</a> 
+                    <div class="clickable" id="about-dropdown4">
+                        <a class="eng">Open Filter</a> 
+                        <img src="./svg/FilterClose2.svg" alt="" style="width: 10px;">
+                    </div>
+                </div>
+                <div class="dropdown" id="filter-dropdown" style="display: none; position: fixed; top: 146px; right: 48px;">
+                    <div id="filter-dropdown1">
+                        <a class="eng"># Architecture</a> 
+                    </div>
+                    <div id="filter-dropdown2">
+                        <a class="eng"># Sensing Tech</a> 
+                    </div>
+                    <div id="filter-dropdown2">
+                        <a class="eng"># Application</a> 
                     </div>
                 </div>
                 
@@ -245,7 +265,7 @@
 
     <section id="footer">
         <div class="container">
-            <div class="footer-title left" id="explore">
+            <div class="footer-title left" id="playground">
                 <a class="eng">Playground</a>
                 <a class="zh"></a>
             </div>
@@ -344,7 +364,7 @@
                         <img id="kiwi-stand" class="icon" src="./icon/kiwi-bird-svgrepo-com.svg">
                         <img id="kiwi-body" class="icon" src="./icon/Kiwi.svg">
                         <img id="kiwi-legs1" class="icon" src="./icon/Kiwi Bird (1).svg">
-                        <img id="kiwi-legs2" class="icon" src="./icon/Kiwi Bird (2).svg">
+                        <img id="kiwi-legs2" class="icon" src="icon/Kiwi Bird (2).svg">
                     </div>
 
                     <div class="dialogue-container" style="position: relative; top: 10px; left: 10px;">

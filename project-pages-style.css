@@ -1,0 +1,33 @@
+.arrows {
+    width: 100%; height: 30px;
+    display: flex; justify-content: center; align-items: center;
+    position: relative; top: 20px;
+    user-select: none; 
+}
+
+.arrows > p:hover {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.arrows > p {
+    font-size: 24px; 
+    font-family: 'Roboto'; 
+    font-weight: 200;
+}
+
+.dots {
+    margin: 0 20px 0 20px; 
+    display: flex; justify-content: center; align-items: center; 
+    gap: 0.5vw;
+}
+
+.dots > p {
+    font-size: 6px;
+}
+
+#slider-image {
+    position: relative;
+    width: 100%; 
+    top: 20px;
+}

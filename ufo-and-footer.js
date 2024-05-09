@@ -213,3 +213,10 @@ fullMapButton.addEventListener('click', function(event) {
         contactIframe.style.display = 'none';
     }, 200);
 });
+
+
+const playgroundButton = document.getElementById('playground');
+
+playgroundButton.addEventListener('click', function(event) {
+    window.open("playground.html", "_blank"); 
+});
