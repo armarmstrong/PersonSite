@@ -1,31 +1,103 @@
 const grassContainer = document.getElementById("grass-container");
-const numberOfBlocks = [6, 12];
 
-function createGrassGrid(grassContainer, numberOfBlocks) {
-    for (let i = 0; i < numberOfBlocks[0]; i++) {
-        const row = document.createElement('div');
-        row.classList.add('block-row');
-        grassContainer.appendChild(row);
+// Set block side length in pixels
+const blockSideLength = 120;
 
-        for (let j = 0; j < numberOfBlocks[1]; j++) {
-            const block = document.createElement('div');
-            block.classList.add('grass-block');
-            block.style.width = grassContainer.offsetWidth / numberOfBlocks[1] + 'px';
-            block.style.height = grassContainer.offsetHeight / numberOfBlocks[0] + 'px';
-            row.appendChild(block);
+function createGrassGrid() {
+  // Calculate number of blocks based on container dimensions and block size
+  const numberOfBlocks = [
+    Math.floor(grassContainer.offsetHeight / blockSideLength),
+    Math.floor(grassContainer.offsetWidth / blockSideLength),
+  ];
 
+  // Clear existing grid
+  grassContainer.innerHTML = "";
+
+  // Create rows and blocks
+  for (let i = 0; i < numberOfBlocks[0]; i++) {
+    const row = document.createElement('div');
+    row.classList.add('block-row');
+    grassContainer.appendChild(row);
+
+    for (let j = 0; j < numberOfBlocks[1]; j++) {
+      const block = document.createElement('div');
+      block.classList.add('grass-block');
+      // Calculate block size based on container dimensions
+        const blockWidth = grassContainer.offsetWidth / numberOfBlocks[1];
+        const blockHeight = grassContainer.offsetHeight / numberOfBlocks[0];
+
+        // Set block size
+        block.style.width = blockWidth + 'px';
+        block.style.height = blockHeight + 'px';
+      
+      row.appendChild(block);
+
+      if (i % 2 === 0) {
+        if (j % 2 === 0) {
+          block.classList.add('grass-block-black');
+        } else {
+
+          block.classList.add('grass-block-white');
         }
-    }
+      } else {
+        if (j % 2 === 0) {
+          block.classList.add('grass-block-white');
+        } else {
+          block.classList.add('grass-block-black');
+        }
+      }
 
-    const grassBlocks = grassContainer.querySelectorAll('.grass-block');
-    for (const block of grassBlocks) {
-        const plus = document.createElement('p');
-        plus.classList.add('plus');
-        plus.textContent = '/';
-        block.appendChild(plus);
+      // Add plus symbol to each block
+      const plus = document.createElement('p');
+      plus.classList.add('plus');
+      plus.textContent = '';
+      block.appendChild(plus);
     }
-
+  }
+  
 }
+
+// Create initial grid
+createGrassGrid();
+
+// Resize grid on window resize
+window.addEventListener('resize', createGrassGrid);
+
+// Optionally, add a resize event listener to the grassContainer itself
+grassContainer.addEventListener('resize', createGrassGrid);
+
+
+
+// offsetWidth TEST
+
+function testWindow() {
+    const testElement = document.createElement("p");
+    testElement.style.position = "fixed";
+    testElement.style.fontSize = "30px";
+    testElement.style.color = "white";
+    testElement.style.top = "0";
+    testElement.style.left = "0";
+    testElement.style.zIndex = "10000";
+    document.body.appendChild(testElement);
+
+    window.addEventListener("resize", () => {
+        const width = grassContainer.offsetWidth;
+        const height = grassContainer.offsetHeight;
+
+        const blockWidth = grassContainer.offsetWidth / numberOfBlocks[1];
+        const blockHeight = grassContainer.offsetHeight / numberOfBlocks[0];
+
+        const numberOfBlocksH = Math.floor(grassContainer.offsetHeight / blockSideLength);
+        const numberOfBlocksW = Math.floor(grassContainer.offsetWidth / blockSideLength);
+
+        testElement.textContent = `${numberOfBlocksH}, ${numberOfBlocksW}, \n GC width: ${width}, height: ${height}, \n blockwidth: ${blockWidth}, \n blockheight: ${blockHeight}`;
+    });
+}
+
+testWindow();
+
+
+
 
 
 function createInnerGrassGrid(innerGrassContainer) {
@@ -44,16 +116,6 @@ function createInnerGrassGrid(innerGrassContainer) {
     }
 }
 
-function resizeGrassGrid() {
-    const grassBlocks = grassContainer.querySelectorAll('.grass-block');
-    const blockWidth = grassContainer.offsetWidth / numberOfBlocks[1];
-    const blockHeight = grassContainer.offsetHeight / numberOfBlocks[0];
-
-    for (const block of grassBlocks) {
-        block.style.width = blockWidth + 'px';
-        block.style.height = blockHeight + 'px';
-    }
-}
 
 function selectGrassBlock() {
     const grassBlocks = document.querySelectorAll('#grass-container .grass-block');
@@ -97,8 +159,7 @@ function selectGrassBlock() {
 //     }
 // }
 
-createGrassGrid(grassContainer, numberOfBlocks);
-window.addEventListener('resize', resizeGrassGrid);
+
 
 const selectedBlock = selectGrassBlock();
 selectInnerGrassBlock(selectedBlock);

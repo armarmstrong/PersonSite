@@ -64,7 +64,7 @@
         top: 0;
         position: absolute;
 
-        padding: 16px 48px 0px 48px;
+        padding: 16px 36px 0px 36px;
     }
 
     #map {
@@ -133,6 +133,12 @@
     #header .dropdown a:hover {
         font-weight: 300;
         cursor: pointer;  
+    }
+
+    #header #filter-dropdown a:hover {
+        font-weight: 300;
+        cursor: pointer; 
+        text-decoration: line-through;
     }
 
     #header .clickable > a {
@@ -218,7 +224,7 @@
 </head>
 
 <body>
-    <img id="project-covers" src="" alt="" onerror="this.src='./project-covers/1-1.webp'">
+    <!-- <img id="project-covers" src="" alt="" onerror="this.src='./project-covers/1-1.webp'"> -->
 
     
 
@@ -238,16 +244,16 @@
                     <div id="plus" style="transition: 0.1s ease-in-out;
                     transform: 'rotate(0deg)'; font-weight: 300;">+</div>
                 </div>
-                <div class="dropdown" id="about-dropdown" style="display: none; position: fixed; top: 48px; right: 48px;">
-                    <a class="eng" id="about-dropdown1">What is THIS ?</a>
+                <div class="dropdown" id="about-dropdown" style="display: none; position: fixed; top: 48px; right: 56px;">
+                    <a class="eng" id="about-dropdown1">What is this ?</a>
                     <a class="eng" id="about-dropdown2">How it works ?</a>
                     <a class="eng" id="about-dropdown3">Why so cool ?</a>
-                    <div class="clickable" id="about-dropdown4">
+                    <div class="clickable" id="about-dropdown4" style="position: relative; left: 2px;">
                         <a class="eng">Open Filter</a> 
-                        <img src="./svg/FilterClose2.svg" alt="" style="width: 10px;">
+                        <img src="./svg/FilterClose2.svg" alt="" style="width:10px;">
                     </div>
                 </div>
-                <div class="dropdown" id="filter-dropdown" style="display: none; position: fixed; top: 146px; right: 48px;">
+                <div class="dropdown" id="filter-dropdown" style="display: none; position: fixed; top: 146px; right: 76px;">
                     <div id="filter-dropdown1">
                         <a class="eng"># Architecture</a> 
                     </div>
@@ -256,6 +262,15 @@
                     </div>
                     <div id="filter-dropdown2">
                         <a class="eng"># Application</a> 
+                    </div>
+                    <div id="filter-dropdown2">
+                        <a class="eng"># Game</a> 
+                    </div>
+                    <div id="filter-dropdown2">
+                        <a class="eng"># Spacial Computing</a> 
+                    </div>
+                    <div id="filter-dropdown2">
+                        <a class="eng"># Planning</a> 
                     </div>
                 </div>
                 

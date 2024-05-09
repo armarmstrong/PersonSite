@@ -5,6 +5,8 @@
     width: 100%;
     height: 200px;
     color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 14px;
 
     background-color: linear-gradient(to bottom, #00000000, #000000);
 }

@@ -170,6 +170,9 @@ function ufoAnimation3() {
     ufoLeft = ufo.offsetLeft;
 }
 
+
+// ufo simply click/shiftleft
+
 document.addEventListener("keydown", function(event) {
     if (event.code === "ShiftLeft") {
         ufoAnimation1();
@@ -179,6 +182,10 @@ document.addEventListener("keydown", function(event) {
 ufo.addEventListener('click', function(event) {
     ufoAnimation1();
 });
+
+
+
+// ufo different situations
 
 const contactButton = document.getElementById('contact');
 contactButton.addEventListener('click', function(event) {
@@ -202,6 +209,48 @@ contactButton.addEventListener('click', function(event) {
     }
 });
 
+
+
+// block animation
+
+function animateShadows(blackBlocks) {
+    let appearIndex = 0;
+    let disappearIndex = 0;
+    const interval = 16; // Adjust the interval for desired animation speed
+    const transitionDuration = blackBlocks.length / 100; // Adjust the transition duration
+  
+    const animateAppear = () => {
+      if (appearIndex < blackBlocks.length) {
+        blackBlocks[appearIndex].style.transition = `all ${transitionDuration}s ease-in-out`;
+        blackBlocks[appearIndex].style.boxShadow = '0px 0px 16px 0px rgba(0, 0, 0, 0.2)';
+        setTimeout(() => {
+          appearIndex++;
+          if (appearIndex === Math.floor(blackBlocks.length)) {
+            animateDisappear();
+          } else {
+            animateAppear();
+          }
+        }, interval);
+      }
+    };
+  
+    const animateDisappear = () => {
+      if (disappearIndex < Math.floor(blackBlocks.length)) {
+        blackBlocks[disappearIndex].style.transition = `all ${transitionDuration}s ease-in-out`;
+        blackBlocks[disappearIndex].style.boxShadow = 'none';
+        setTimeout(() => {
+          disappearIndex++;
+          animateDisappear();
+        }, interval);
+      }
+    };
+  
+    animateAppear();
+}
+
+
+// fullMapButton
+  
 const fullMapButton = document.getElementById('fullmap');
 
 fullMapButton.addEventListener('click', function(event) {
@@ -212,8 +261,16 @@ fullMapButton.addEventListener('click', function(event) {
     setTimeout(function() {
         contactIframe.style.display = 'none';
     }, 200);
+
+    if (contactIframe.style.display === 'none' && overlayIframe.style.display === 'none'  ) {
+        const blackBlocks = document.getElementsByClassName('grass-block-black');
+        animateShadows(blackBlocks);
+    }
 });
 
+
+
+// playgroundButton
 
 const playgroundButton = document.getElementById('playground');
 

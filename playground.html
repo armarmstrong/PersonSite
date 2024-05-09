@@ -74,8 +74,6 @@
         margin: 0 36px 0 36px;
 
         z-index: 1000;
-
-        background-color: linear-gradient(to bottom, #00000000, #000000);
     }
 
     #copyright > .container {
@@ -98,8 +96,9 @@
         transform: translateX(-50%);
     }
 
-    #copyright > .container > a {
+    #copyright > .container > p:nth-child(3) {
         right: 0;
+        user-select: none;
     }
 
     #slider {
@@ -254,10 +253,11 @@
         <div class="container">
             <p id="back-button" class="clickable">Back <span>↩</span> </p> 
             <p>© 2024 <NAME>Yixi Wu</NAME>. All rights reserved.</p>
-            <a href="">Buy me a coffee</a>
+            <p id="archived-button" class="clickable">Archived <span>⏭︎</span> </p> 
         </div>
     </section>
 
+    <a href="" style="position: absolute; bottom: 16px; right: 36px; user-select: none; z-index: 100; font-family: 'Roboto'; font-size: 14px;">Buy me a coffee</a>
 
 
     <!-- 引入js -->

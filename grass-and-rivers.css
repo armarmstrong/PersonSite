@@ -38,11 +38,15 @@
 }
 
 #grass-container .grass-block {
-    /* background-color: green;  */
-    opacity: 0.95;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#grass-container .grass-block-black {
+}
+
+#grass-container .grass-block-white {
 }
 
 #grass-container .plus {
