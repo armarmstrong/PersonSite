@@ -37,11 +37,11 @@ filter.addEventListener('click', function() {
         filterDropdown.style.gap = '5px';
 
         filter.textContent = 'Close Filter';
-        filterIcon.src = '/svg/Filter2.svg';
+        filterIcon.src = './svg/Filter2.svg';
     } else {
         filterDropdown.style.display = 'none';
         
         filter.textContent = 'Open Filter';
-        filterIcon.src = '/svg/FilterClose2.svg';
+        filterIcon.src = './svg/FilterClose2.svg';
     }
 });
