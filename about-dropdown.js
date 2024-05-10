@@ -5,6 +5,10 @@ const plus = document.getElementById('plus');
 aboutDropdown.style.display === 'none';
 plus.textContent = '+';
 
+const filter = document.querySelector('#about-dropdown4 > a');
+const filterIcon = document.querySelector('#about-dropdown4 > img');
+const filterDropdown = document.getElementById('filter-dropdown');
+
 
 about.addEventListener('click', function() {
     if (aboutDropdown.style.display === 'none') {
@@ -25,10 +29,6 @@ about.addEventListener('click', function() {
     }
 });
 
-
-const filter = document.querySelector('#about-dropdown4 > a');
-const filterIcon = document.querySelector('#about-dropdown4 > img');
-const filterDropdown = document.getElementById('filter-dropdown');
 
 filter.addEventListener('click', function() {
     if (filterDropdown.style.display === 'none') {
