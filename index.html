@@ -231,7 +231,7 @@
     <section id="header">
         <div class="container">
             <div class="header-title left">
-                <a class="eng"></a>
+                <a class="eng">© 2024 <NAME>Yixi Wu</NAME>. All rights reserved.</a>
                 <a class="zh"></a>
             </div>
             <!-- <div class="header-title middle">
@@ -255,22 +255,22 @@
                 </div>
                 <div class="dropdown" id="filter-dropdown" style="display: none; position: fixed; top: 146px; right: 76px;">
                     <div id="filter-dropdown1">
-                        <a class="eng"># Architecture</a> 
+                        <a class="eng">Architecture #</a> 
                     </div>
                     <div id="filter-dropdown2">
-                        <a class="eng"># Sensing Tech</a> 
+                        <a class="eng">Sensing Tech #</a> 
                     </div>
                     <div id="filter-dropdown2">
-                        <a class="eng"># Application</a> 
+                        <a class="eng">Application #</a> 
                     </div>
                     <div id="filter-dropdown2">
-                        <a class="eng"># Game</a> 
+                        <a class="eng">Game #</a> 
                     </div>
                     <div id="filter-dropdown2">
-                        <a class="eng"># Spacial Computing</a> 
+                        <a class="eng">Spacial Computing #</a> 
                     </div>
                     <div id="filter-dropdown2">
-                        <a class="eng"># Planning</a> 
+                        <a class="eng">Planning #</a> 
                     </div>
                 </div>
                 
@@ -303,11 +303,24 @@
             <!-- grass and rivers -->
             <div id="grass-container"></div>
 
-            <!-- contour lines
+            <div style="width: calc(3vw + 30px); aspect-ratio: 0.54; 
+            position: absolute; 
+            top: 80%; left: 42%; 
+            transform: translate(-50%, -50%) rotate(70deg);
+            transform-origin: center;
+            overflow: hidden;
+            ">
+                <img style="width: 100%; 
+                left: 50%; top: 45%; position: absolute; 
+                transform: translate(-50%, -50%);" 
+                src="./svg/Parthenon Top View.svg" alt="">
+            </div>
+
+            <!-- contour lines -->
             <img src="./svg/Topo Map Contour Lines.svg" alt="contour"
             style="height: 100vh; width: 100vw; position: absolute; z-index: -1;
             top: 0%; left: 0%; object-fit: cover;
-            opacity: 0.2;"> -->
+            opacity: 0.2;">
 
             <!-- compass -->
             <div class="compass">
@@ -316,6 +329,11 @@
                     <div id="ne"></div>
                     <div id="north"> <p>N</p> </div>
                 </div>
+            </div>
+
+            <!-- scale -->
+            <div id="scale">
+
             </div>
 
             <!-- cross line -->
