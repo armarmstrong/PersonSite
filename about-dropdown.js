@@ -21,7 +21,7 @@ about.addEventListener('click', function() {
 
         filterDropdown.style.display = 'none';
         filter.textContent = 'Open Filter';
-        filterIcon.src = '/svg/FilterClose2.svg';
+        filterIcon.src = './svg/FilterClose2.svg';
     }
 });
 
