@@ -45,3 +45,9 @@
     background: #F2F76D;
     cursor: default;
 }
+
+@media (max-width: 600px) {
+    #footer {
+        padding: 16px 20px 16px 20px;
+    }
+}

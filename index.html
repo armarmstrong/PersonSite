@@ -91,7 +91,7 @@
     #header > .container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
     #header * {
@@ -100,8 +100,16 @@
         font-size: 14px;
         font-weight: 400;
     }
+
+    .header-title.left {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+    }
     
-    .header-title, .right {
+    .header-title.right {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -197,11 +205,15 @@
       z-index: 6665;
     }
 
-    #kiwi-test {
+    #pop-up {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: all 0.5s ease-in-out;
+
+        width: 600px;
+        height: 300px;
         
         display: flex;
         justify-content: center;
@@ -211,9 +223,11 @@
         background-color: #0dd460;
     }
 
-    #kiwi-test img {
-        width: 300px;
+    #cancel-pop-up:hover {
+        cursor: pointer;
     }
+
+    
 
     #project-covers {
         position: fixed;
@@ -225,32 +239,52 @@
         transition: all 0.8s ease-in-out;
     }
 
+    @media (max-width: 600px) {
+        #pop-up {
+            width: calc(100vw - 40px);
+            height: 48vw;
+        }
+
+        .header-title.left {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-title.left > a:last-child {
+            display: none;
+        }
+
+        #header {
+            padding: 16px 18px 0px 18px;
+        }
+    }
+
 </style>
 </head>
 
 <body>
-    <!-- kiwi test -->
-    <section id="kiwi-test">
-        <img src="icon/Kiwi Bird (1).svg" alt="">
-        <img src="icon/Kiwi-Bird (2).svg" alt="">
+    <!-- pop-up window -->
+    <section id="pop-up">
+        <img id="cancel-pop-up" src="./svg/Cancel.svg" alt="" 
+        style="width: 16px; position: absolute; top: 16px; right: 16px;">
     </section>
     
 
     <section id="header">
         <div class="container">
             <div class="header-title left">
-                <a class="eng">© 2024 <NAME>Yixi Wu</NAME>. All rights reserved.</a>
-                <a class="zh"></a>
+                <a class="eng">© 2024 <NAME>Yixi Wu</NAME>.</a>
+                <a class="eng">All rights reserved.</a>
             </div>
             <!-- <div class="header-title middle">
                 <a class="eng">Chris Wu</a>
                 <a class="zh">你好</a>
             </div> -->
             <div class="header-title right" style="width: 100px;">
-                <div class="clickable" id="about" style="display: flex; align-items: flex-start; gap: 3px;">
+                <div class="clickable" id="about" style="display: flex; align-items: center; justify-content: flex-start; gap: 3px;">
                     <a class="eng" id="text-about">About</a>
-                    <div id="plus" style="transition: 0.1s ease-in-out;
-                    transform: 'rotate(0deg)'; font-weight: 300;">+</div>
+                    <img id="plus" style="transition: 0.1s ease-in-out; width: 10px;
+                    transform: 'rotate(0deg)'; font-weight: 300;" src="./svg/Plus.svg" alt="">
                 </div>
                 <div class="dropdown" id="about-dropdown" style="display: none; position: fixed; top: 48px; right: 56px;">
                     <a class="eng" id="about-dropdown1">What is this ?</a>
@@ -486,6 +520,27 @@
 
         cave.addEventListener('click', function(event) {
             cave.style.transform = 'scale(1.2)';
+        });
+    </script>
+
+    <script>
+        const cancel = document.getElementById('cancel-pop-up');
+        const popUp = document.getElementById('pop-up');
+
+             
+        function showPopUp(event) {
+            event.preventDefault();
+            setTimeout (() => {
+                popUp.style.display = 'block';
+            }, 1000);
+        }
+
+
+        cancel.addEventListener('click', function(event) {
+            popUp.style.opacity = 0;
+            setTimeout (() => {
+                popUp.style.display = 'none';
+            }, 500);
         });
     </script>
 </body>

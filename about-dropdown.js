@@ -3,7 +3,7 @@ const aboutDropdown = document.getElementById('about-dropdown');
 const plus = document.getElementById('plus');
 
 aboutDropdown.style.display === 'none';
-plus.textContent = '+';
+plus.src = './svg/Plus.svg';
 
 const filter = document.querySelector('#about-dropdown4 > a');
 const filterIcon = document.querySelector('#about-dropdown4 > img');
@@ -15,13 +15,13 @@ about.addEventListener('click', function() {
         aboutDropdown.style.display = 'flex';
         plus.style.transform = 'rotate(180deg)';
         
-            plus.textContent = '--';
+            plus.src = './svg/Minus.svg';
         
     } else {
         aboutDropdown.style.display = 'none';
         plus.style.transform = 'rotate(0deg)';
         
-            plus.textContent = '+';
+            plus.src = './svg/Plus.svg';
 
         filterDropdown.style.display = 'none';
         filter.textContent = 'Open Filter';
