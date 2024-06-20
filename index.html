@@ -220,6 +220,8 @@
         align-items: center;
         z-index: 9999;
 
+        overflow: hidden;
+
         background-color: #0dd460;
     }
 
@@ -257,6 +259,10 @@
         #header {
             padding: 16px 18px 0px 18px;
         }
+
+        #pop-up-text {
+            font-size: 13px;
+        }
     }
 
 </style>
@@ -267,6 +273,17 @@
     <section id="pop-up">
         <img id="cancel-pop-up" src="./svg/Cancel.svg" alt="" 
         style="width: 16px; position: absolute; top: 16px; right: 16px;">
+        <img src="./icon/walking.svg" alt=""
+        style=" width: 72%; position: absolute; top: 44%; left: -22%; transform: translate(0, -50%);">
+        <div id="pop-up-text" style="width: 56%; position: absolute; left: 36%;">
+            <!-- <p>Welcome to my website!</p>
+            <p>This is a map of my personal growth and experience.</p>
+            <p>I will keep walking and keep creating.</p> -->
+
+            <p>A LITTLE HELP HERE…</p>
+            <p>&nbsp;</p>
+            <p>I'm trying to get Google to auto-complete "Yixi Wu is Awesome" when you type "Yixi Wu" into the search box so if you click this link below that searchs Google for <a href="https://www.google.com/search?q=Yixi+Wu+is+Awesome" target="_blank" style="font-weight: 500; font-style: italic; color: #000000;">"Yixi Wu is Awesome"</a> it would really help me out.</p>
+        </div>
     </section>
     
 

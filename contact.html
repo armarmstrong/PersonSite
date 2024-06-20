@@ -69,12 +69,23 @@
     top: 0;
     }
 
-    
-
     </style>
 </head>
 
 <body>
+
+    <div id="emailModal" class="pop-up">
+        <img id="cancel-pop-up" src="./svg/Cancel.svg" alt="" 
+        style="width: 16px; position: absolute; top: 16px; right: 16px;">
+        <div class="modal-content">
+          <p style="text-align: center; margin-top: 5px; font-size: 18px; font-family: 'Lugrasimo';" id="emailText"></p>
+          <div style="display: flex; justify-content: space-evenly; margin-top: 20px;">
+            <button id="copyButton"></button>
+            <button id="emailToButton"></button>
+            <button id="coolButton"></button>
+          </div>
+        </div>
+    </div>
 
     <section id="brand">
         <div class="container">
@@ -144,16 +155,7 @@
         </div>
     </section>
 
-    <div id="emailModal" class="modal">
-        <div class="modal-content">
-          <p style="margin-top: 5px; font-size: 18px; font-family: 'Lugrasimo';" id="emailText"></p>
-          <div style="display: flex; justify-content: space-evenly; margin-top: 20px;">
-            <button id="copyButton"></button>
-            <button id="emailToButton"></button>
-            <button id="coolButton"></button>
-          </div>
-        </div>
-    </div>
+   
 
     <section id="copyright">
         <div class="container">
@@ -206,6 +208,26 @@
         });
     </script>
 
+    <script>
+        const cancel = document.getElementById('cancel-pop-up');
+        const emailModal = document.getElementsById('emailModal');
+
+            
+        function showemailModal(event) {
+            event.preventDefault();
+            setTimeout (() => {
+                emailModal.style.display = 'block';
+            }, 1000);
+        }
+
+
+        cancel.addEventListener('click', function(event) {
+            emailModal.style.opacity = 0;
+            setTimeout (() => {
+                emailModal.style.display = 'none';
+            }, 500);
+        });
+    </script>
 </body>
 
 </html>
